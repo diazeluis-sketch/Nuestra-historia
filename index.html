@@ -3,813 +3,905 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Para Melissa ❤️</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: #F7F1EC;
-            color: #3D3030;
-            font-family: Georgia, serif;
-            overflow-x: hidden;
-        }
-
-        .escena {
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .contenedor {
-            width: 100%;
-            max-width: 700px;
-            margin: auto;
-        }
-
-
-        /* ================================
-           BOTONES
-        ================================= */
-
-        button {
-            padding: 15px 32px;
-            border: none;
-            border-radius: 30px;
-            background: #8b4a5a;
-            color: white;
-            font-family: Georgia, serif;
-            font-size: 17px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(70,50,50,0.15);
-            transition: transform 0.3s ease,
-                        background 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.04);
-        }
-
-
-        /* ================================
-           PORTADA
-        ================================= */
-
-        #portada {
-            background:
-                linear-gradient(
-                    135deg,
-                    #f8eef0,
-                    #f3dfe4
-                );
-
-            color: #4a3035;
-
-            transition: opacity 1.5s ease;
-        }
-
-        .corazon {
-            font-size: 58px;
-            margin-bottom: 25px;
-
-            animation:
-                latido 1.8s infinite;
-        }
-
-        h1 {
-            font-size: 34px;
-            font-weight: normal;
-            margin: 0 0 22px;
-        }
-
-        .mensaje {
-            font-size: 19px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-
-        /* ================================
-           IQUITOS
-        ================================= */
-
-        #iquitos {
-            display: none;
-            min-height: 100vh;
-            background: #F7F1EC;
-            color: #3D3030;
-            flex-direction: column;
-        }
-
-        .intro {
-            max-width: 600px;
-            font-size: 25px;
-            line-height: 1.7;
-            margin: 0 auto 50px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-        }
-
-        .intro strong {
-            font-weight: normal;
-        }
-
-        .fecha {
-            font-size: 15px;
-            letter-spacing: 6px;
-            color: #756565;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 1s;
-
-            margin-bottom: 12px;
-        }
-
-        .lugar {
-            font-size: 48px;
-            letter-spacing: 9px;
-            color: #3D3030;
-            margin-bottom: 40px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 1.5s;
-        }
-
-        .foto {
-            width: 100%;
-            max-width: 620px;
-            margin: 25px auto;
-            overflow: hidden;
-            border-radius: 5px;
-
-            box-shadow:
-                0 15px 40px rgba(70,50,50,0.18);
-
-            opacity: 0;
-        }
-
-        .foto img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .foto-1 {
-            animation:
-                fotoEntrada 2s ease forwards;
-
-            animation-delay: 2.5s;
-        }
-
-        .foto-2 {
-            animation:
-                fotoEntrada 2s ease forwards;
-
-            animation-delay: 4.5s;
-        }
-
-        .texto-final {
-            max-width: 580px;
-            font-size: 20px;
-            line-height: 1.9;
-            margin: 45px auto 0;
-            color: #4A3B3B;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 6s;
-        }
-
-        .conexion {
-            font-size: 28px;
-            margin-top: 25px;
-            margin-bottom: 20px;
-            color: #8b4a5a;
-        }
-
-        .continuar {
-            margin-top: 50px;
-            margin-bottom: 40px;
-
-            background: transparent;
-            color: #8b4a5a;
-
-            border:
-                1px solid rgba(139,74,90,0.45);
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 7.5s;
-        }
-
-        .continuar:hover {
-            background: #8b4a5a;
-            color: white;
-        }
-
-
-        /* ================================
-           PERO NO
-        ================================= */
-
-        #lima {
-            display: none;
-            min-height: 100vh;
-            background: #F7F1EC;
-            color: #3D3030;
-            flex-direction: column;
-        }
-
-        .lima-texto {
-            max-width: 650px;
-            margin: auto;
-        }
-
-        .frase-lima {
-            font-size: 25px;
-            line-height: 1.8;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2.5s ease forwards;
-        }
-
-        .frase-lima-2 {
-            font-size: 42px;
-            margin-top: 60px;
-            color: #8b4a5a;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2.5s ease forwards;
-
-            animation-delay: 3s;
-        }
-
-        .frase-lima-3 {
-            font-size: 22px;
-            line-height: 1.8;
-            margin-top: 55px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2.5s ease forwards;
-
-            animation-delay: 5s;
-        }
-
-        .boton-lima {
-            margin-top: 60px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 7s;
-        }
-
-
-        /* ================================
-           MOMENTOS
-        ================================= */
-
-        #momentos {
-            display: none;
-            min-height: 100vh;
-            background: #F7F1EC;
-            color: #3D3030;
-            flex-direction: column;
-        }
-
-        .momentos-intro {
-            max-width: 620px;
-            font-size: 25px;
-            line-height: 1.8;
-            margin: 0 auto 55px;
-        }
-
-        .momento {
-            margin-bottom: 80px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 1.8s ease forwards;
-        }
-
-        .momento:nth-child(2) {
-            animation-delay: 0.8s;
-        }
-
-        .momento:nth-child(3) {
-            animation-delay: 1.8s;
-        }
-
-        .momento:nth-child(4) {
-            animation-delay: 2.8s;
-        }
-
-        .momento img {
-            width: 100%;
-            max-width: 620px;
-            display: block;
-            margin: auto;
-            border-radius: 5px;
-
-            box-shadow:
-                0 15px 40px rgba(70,50,50,0.18);
-        }
-
-        .momento-texto {
-            font-size: 20px;
-            line-height: 1.8;
-            margin-top: 25px;
-        }
-
-        .momento-titulo {
-            font-size: 14px;
-            letter-spacing: 4px;
-            color: #8b4a5a;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .frase-momentos {
-            max-width: 600px;
-            font-size: 25px;
-            line-height: 1.8;
-            margin: 20px auto 60px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 4s;
-        }
-
-        .boton-momentos {
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 5s;
-        }
-
-
-        /* ================================
-           ESCENA 5 — CARRO
-        ================================= */
-
-        #carro {
-            display: none;
-            min-height: 100vh;
-            background: #F7F1EC;
-            color: #3D3030;
-            flex-direction: column;
-        }
-
-        .carro-intro {
-            max-width: 600px;
-            font-size: 25px;
-            line-height: 1.8;
-            margin: 0 auto 55px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-        }
-
-        .foto-principal {
-            width: 100%;
-            max-width: 680px;
-            margin: 0 auto 50px;
-            overflow: hidden;
-            border-radius: 6px;
-
-            box-shadow:
-                0 20px 55px rgba(70,50,50,0.22);
-
-            opacity: 0;
-
-            animation:
-                fotoGrande 2.5s ease forwards;
-
-            animation-delay: 1.5s;
-        }
-
-        .foto-principal img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .frase-carro {
-            max-width: 580px;
-            margin: 0 auto 60px;
-            font-size: 24px;
-            line-height: 1.9;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 3.5s;
-        }
-
-        .palabras {
-            font-size: 23px;
-            line-height: 2.2;
-            margin-bottom: 60px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 5s;
-        }
-
-        .palabras span {
-            display: block;
-        }
-
-        .frase-mano {
-            font-size: 21px;
-            line-height: 1.8;
-            max-width: 580px;
-            margin: 0 auto 60px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 7s;
-        }
-
-        .broma-mano {
-            font-size: 18px;
-            color: #8b4a5a;
-            margin-top: 18px;
-        }
-
-        .fotos-secundarias {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin: 30px auto 60px;
-            max-width: 680px;
-        }
-
-        .foto-secundaria {
-            width: 50%;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-        }
-
-        .foto-secundaria:nth-child(1) {
-            animation-delay: 8s;
-        }
-
-        .foto-secundaria:nth-child(2) {
-            animation-delay: 8.8s;
-        }
-
-        .foto-secundaria img {
-            display: block;
-            width: 100%;
-            border-radius: 5px;
-
-            box-shadow:
-                0 12px 35px rgba(70,50,50,0.16);
-        }
-
-        .boton-carro {
-            margin-top: 20px;
-            margin-bottom: 40px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 10s;
-        }
-
-
-        /* ================================
-           ESCENA 6 — TU MIRADA
-        ================================= */
-
-        #mirada {
-            display: none;
-            min-height: 100vh;
-            background: #F7F1EC;
-            color: #3D3030;
-            flex-direction: column;
-        }
-
-        .mirada-intro {
-            max-width: 600px;
-            font-size: 27px;
-            line-height: 1.8;
-            margin: 0 auto 55px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2.5s ease forwards;
-        }
-
-        .mirada-foto {
-            width: 100%;
-            max-width: 680px;
-            margin: 0 auto 55px;
-            overflow: hidden;
-            border-radius: 6px;
-
-            box-shadow:
-                0 20px 55px rgba(70,50,50,0.22);
-
-            opacity: 0;
-
-            animation:
-                fotoGrande 2.5s ease forwards;
-
-            animation-delay: 2s;
-        }
-
-        .mirada-foto img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .mirada-texto {
-            max-width: 600px;
-            margin: 0 auto;
-
-            font-size: 21px;
-            line-height: 1.9;
-        }
-
-        .mirada-bloque {
-            margin-bottom: 45px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 4s;
-        }
-
-        .mirada-especial {
-            font-size: 27px;
-            color: #8b4a5a;
-            margin: 25px 0;
-        }
-
-        .mirada-gracias {
-            margin-top: 55px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 6.5s;
-        }
-
-        .mirada-final {
-            margin-top: 35px;
-
-            font-size: 25px;
-
-            color: #8b4a5a;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 8s;
-        }
-
-        .boton-mirada {
-            margin-top: 65px;
-            margin-bottom: 40px;
-
-            opacity: 0;
-
-            animation:
-                aparecer 2s ease forwards;
-
-            animation-delay: 9.5s;
-        }
-
-
-        /* ================================
-           ANIMACIONES
-        ================================= */
-
-        @keyframes aparecer {
-
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes fotoEntrada {
-
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes fotoGrande {
-
-            from {
-                opacity: 0;
-                transform: scale(0.97);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-        }
-
-        @keyframes latido {
-
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.12);
-            }
-
-        }
-
-
-        /* ================================
-           CELULAR
-        ================================= */
-
-        @media (max-width: 600px) {
-
-            .escena {
-                padding: 35px 18px;
-            }
-
-            h1 {
-                font-size: 29px;
-            }
-
-            .mensaje {
-                font-size: 17px;
-            }
-
-            .intro {
-                font-size: 21px;
-            }
-
-            .lugar {
-                font-size: 35px;
-                letter-spacing: 6px;
-            }
-
-            .texto-final {
-                font-size: 18px;
-            }
-
-            .conexion {
-                font-size: 25px;
-            }
-
-            .frase-lima {
-                font-size: 21px;
-            }
-
-            .frase-lima-2 {
-                font-size: 35px;
-            }
-
-            .frase-lima-3 {
-                font-size: 19px;
-            }
-
-            .momentos-intro {
-                font-size: 21px;
-            }
-
-            .momento-texto {
-                font-size: 18px;
-            }
-
-            .frase-momentos {
-                font-size: 21px;
-            }
-
-            .carro-intro {
-                font-size: 21px;
-            }
-
-            .frase-carro {
-                font-size: 21px;
-            }
-
-            .palabras {
-                font-size: 20px;
-            }
-
-            .frase-mano {
-                font-size: 19px;
-            }
-
-            .fotos-secundarias {
-                gap: 12px;
-            }
-
-            .mirada-intro {
-                font-size: 23px;
-            }
-
-            .mirada-texto {
-                font-size: 19px;
-            }
-
-            .mirada-especial {
-                font-size: 24px;
-            }
-
-            .mirada-final {
-                font-size: 22px;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Melissa ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:#F7F1EC;
+    color:#3D3030;
+    font-family:Georgia,serif;
+    overflow-x:hidden;
+}
+
+.escena{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contenedor{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+    padding:15px 32px;
+    border:none;
+    border-radius:30px;
+    background:#8b4a5a;
+    color:white;
+    font-family:Georgia,serif;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(70,50,50,.15);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.04);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+#portada{
+    background:linear-gradient(135deg,#f8eef0,#f3dfe4);
+    color:#4a3035;
+    transition:opacity 1.5s ease;
+}
+
+.corazon{
+    font-size:58px;
+    margin-bottom:25px;
+    animation:latido 1.8s infinite;
+}
+
+h1{
+    font-size:34px;
+    font-weight:normal;
+    margin:0 0 22px;
+}
+
+.mensaje{
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.intro,
+.carro-intro,
+.mirada-intro{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 50px;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+}
+
+.foto{
+    width:100%;
+    max-width:620px;
+    margin:25px auto;
+    overflow:hidden;
+    border-radius:6px;
+    box-shadow:0 15px 40px rgba(70,50,50,.18);
+    opacity:0;
+}
+
+.foto img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.texto-final{
+    max-width:580px;
+    font-size:20px;
+    line-height:1.9;
+    margin:45px auto 0;
+}
+
+.continuar{
+    margin-top:50px;
+    margin-bottom:40px;
+    background:transparent;
+    color:#8b4a5a;
+    border:1px solid rgba(139,74,90,.45);
+}
+
+.continuar:hover{
+    background:#8b4a5a;
+    color:white;
+}
+
+
+/* =========================
+   IQUITOS
+========================= */
+
+#iquitos{
+    display:none;
+    flex-direction:column;
+}
+
+.fecha{
+    font-size:15px;
+    letter-spacing:6px;
+    color:#756565;
+    margin-bottom:12px;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:1s;
+}
+
+.lugar{
+    font-size:48px;
+    letter-spacing:9px;
+    margin-bottom:40px;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:1.5s;
+}
+
+.foto-1{
+    animation:fotoEntrada 2s ease forwards;
+    animation-delay:2.5s;
+}
+
+.foto-2{
+    animation:fotoEntrada 2s ease forwards;
+    animation-delay:4.5s;
+}
+
+.texto-final{
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:6s;
+}
+
+.conexion{
+    font-size:28px;
+    margin:25px 0 20px;
+    color:#8b4a5a;
+}
+
+
+/* =========================
+   PERO NO
+========================= */
+
+#lima{
+    display:none;
+}
+
+.lima-texto{
+    max-width:650px;
+}
+
+.frase-lima{
+    font-size:25px;
+    line-height:1.8;
+    opacity:0;
+    animation:aparecer 2.5s ease forwards;
+}
+
+.frase-lima-2{
+    font-size:42px;
+    margin-top:60px;
+    color:#8b4a5a;
+    opacity:0;
+    animation:aparecer 2.5s ease forwards;
+    animation-delay:3s;
+}
+
+.frase-lima-3{
+    font-size:22px;
+    line-height:1.8;
+    margin-top:55px;
+    opacity:0;
+    animation:aparecer 2.5s ease forwards;
+    animation-delay:5s;
+}
+
+.boton-lima{
+    margin-top:60px;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:7s;
+}
+
+
+/* =========================
+   MOMENTOS
+========================= */
+
+#momentos{
+    display:none;
+}
+
+.momentos-intro{
+    max-width:620px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 55px;
+}
+
+.momento{
+    margin-bottom:80px;
+    opacity:0;
+    animation:aparecer 1.8s ease forwards;
+}
+
+.momento img{
+    width:100%;
+    max-width:620px;
+    display:block;
+    margin:auto;
+    border-radius:5px;
+    box-shadow:0 15px 40px rgba(70,50,50,.18);
+}
+
+.momento-titulo{
+    font-size:14px;
+    letter-spacing:4px;
+    color:#8b4a5a;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.momento-texto{
+    font-size:20px;
+    line-height:1.8;
+    margin-top:25px;
+}
+
+.frase-momentos{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:20px auto 60px;
+}
+
+
+/* =========================
+   CARRO
+========================= */
+
+#carro{
+    display:none;
+}
+
+.foto-principal{
+    width:100%;
+    max-width:680px;
+    margin:0 auto 50px;
+    overflow:hidden;
+    border-radius:6px;
+    box-shadow:0 20px 55px rgba(70,50,50,.22);
+    opacity:0;
+    animation:fotoGrande 2.5s ease forwards;
+    animation-delay:1.5s;
+}
+
+.foto-principal img{
+    display:block;
+    width:100%;
+}
+
+.frase-carro{
+    max-width:580px;
+    margin:0 auto 60px;
+    font-size:24px;
+    line-height:2.2;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:3.5s;
+}
+
+.frase-mano{
+    font-size:21px;
+    line-height:1.8;
+    max-width:580px;
+    margin:0 auto 60px;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+    animation-delay:5.5s;
+}
+
+.broma-mano{
+    font-size:18px;
+    color:#8b4a5a;
+    margin-top:18px;
+}
+
+.fotos-secundarias{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    margin:30px auto 60px;
+    max-width:680px;
+}
+
+.foto-secundaria{
+    width:50%;
+    opacity:0;
+    animation:aparecer 2s ease forwards;
+}
+
+.foto-secundaria:first-child{
+    animation-delay:7s;
+}
+
+.foto-secundaria:last-child{
+    animation-delay:7.8s;
+}
+
+.foto-secundaria img{
+    display:block;
+    width:100%;
+    border-radius:5px;
+    box-shadow:0 12px 35px rgba(70,50,50,.16);
+}
+
+.boton-carro{
+    margin-top:20px;
+}
+
+
+/* =========================
+   TU MIRADA
+========================= */
+
+#mirada{
+    display:none;
+}
+
+.mirada-intro{
+    font-size:27px;
+}
+
+.mirada-foto{
+    width:100%;
+    max-width:680px;
+    margin:0 auto 55px;
+    overflow:hidden;
+    border-radius:6px;
+    box-shadow:0 20px 55px rgba(70,50,50,.22);
+    opacity:0;
+    animation:fotoGrande 2.5s ease forwards;
+    animation-delay:1.5s;
+}
+
+.mirada-foto img{
+    display:block;
+    width:100%;
+}
+
+.mirada-texto{
+    max-width:600px;
+    margin:auto;
+    font-size:21px;
+    line-height:1.9;
+}
+
+.mirada-bloque{
+    margin-bottom:45px;
+}
+
+.mirada-especial{
+    font-size:27px;
+    color:#8b4a5a;
+    margin:25px 0;
+}
+
+.mirada-gracias{
+    margin-top:55px;
+}
+
+.mirada-final{
+    margin-top:35px;
+    font-size:25px;
+    color:#8b4a5a;
+}
+
+.boton-mirada{
+    margin-top:65px;
+}
+
+
+/* =========================
+   LO QUE PROVOCASTE
+========================= */
+
+#provocaste{
+    display:none;
+}
+
+.provocaste-intro{
+    max-width:620px;
+    font-size:27px;
+    line-height:1.9;
+    margin-bottom:55px;
+}
+
+.provocaste-texto{
+    max-width:610px;
+    font-size:21px;
+    line-height:2;
+    margin:auto;
+}
+
+.provocaste-bloque{
+    margin-bottom:45px;
+}
+
+.provocaste-destacado{
+    color:#8b4a5a;
+    font-size:27px;
+    margin:25px 0;
+}
+
+.provocaste-final{
+    margin-top:55px;
+    font-size:25px;
+}
+
+.boton-provocaste{
+    margin-top:65px;
+}
+
+
+/* =========================
+   NUESTRA CANCIÓN
+========================= */
+
+#cancion{
+    display:none;
+}
+
+.cancion-titulo{
+    font-size:16px;
+    letter-spacing:5px;
+    color:#8b4a5a;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.cancion-nombre{
+    font-size:34px;
+    font-weight:normal;
+    line-height:1.4;
+    margin-bottom:10px;
+}
+
+.cancion-artistas{
+    font-size:19px;
+    color:#756565;
+    margin-bottom:45px;
+}
+
+.cancion-mensaje{
+    max-width:580px;
+    margin:0 auto 40px;
+    font-size:21px;
+    line-height:1.9;
+}
+
+.spotify{
+    width:100%;
+    max-width:500px;
+    height:152px;
+    border:0;
+    border-radius:12px;
+    margin:20px auto 35px;
+    display:block;
+}
+
+.cancion-nota{
+    font-size:16px;
+    line-height:1.7;
+    color:#756565;
+    max-width:500px;
+    margin:20px auto;
+}
+
+.boton-cancion{
+    margin-top:35px;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+#carta{
+    display:none;
+}
+
+.carta{
+    max-width:620px;
+    margin:auto;
+    text-align:left;
+    font-size:20px;
+    line-height:2;
+}
+
+.carta-saludo{
+    text-align:center;
+    font-size:28px;
+    color:#8b4a5a;
+    margin-bottom:40px;
+}
+
+.carta p{
+    margin-bottom:28px;
+}
+
+.carta-firma{
+    text-align:right;
+    margin-top:45px;
+    font-size:23px;
+    color:#8b4a5a;
+}
+
+.boton-carta{
+    margin-top:60px;
+}
+
+
+/* =========================
+   FUTURO
+========================= */
+
+#futuro{
+    display:none;
+}
+
+.futuro-intro{
+    max-width:620px;
+    font-size:28px;
+    line-height:1.8;
+    margin-bottom:55px;
+}
+
+.futuro-texto{
+    max-width:600px;
+    font-size:21px;
+    line-height:2;
+    margin:auto;
+}
+
+.futuro-lista{
+    margin:45px 0;
+    font-size:22px;
+    line-height:2.3;
+}
+
+.futuro-final{
+    margin-top:55px;
+    font-size:25px;
+    color:#8b4a5a;
+}
+
+.boton-futuro{
+    margin-top:65px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+#final{
+    display:none;
+    background:linear-gradient(135deg,#f8eef0,#f3dfe4);
+}
+
+.final-corazon{
+    font-size:58px;
+    margin-bottom:25px;
+    animation:latido 1.8s infinite;
+}
+
+.final-titulo{
+    font-size:34px;
+    font-weight:normal;
+    margin-bottom:40px;
+}
+
+.final-texto{
+    max-width:600px;
+    margin:auto;
+    font-size:22px;
+    line-height:2;
+}
+
+.final-desayuno{
+    font-size:27px;
+    color:#8b4a5a;
+    margin:45px 0;
+}
+
+.final-broma{
+    font-size:19px;
+    margin-top:35px;
+}
+
+.final-fecha{
+    margin-top:60px;
+    font-size:15px;
+    letter-spacing:4px;
+    color:#756565;
+}
+
+.final-meses{
+    font-size:22px;
+    margin-top:15px;
+}
+
+.final-amor{
+    font-size:32px;
+    color:#8b4a5a;
+    margin-top:30px;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fotoEntrada{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fotoGrande{
+
+    from{
+        opacity:0;
+        transform:scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+    .escena{
+        padding:35px 18px;
+    }
+
+    h1{
+        font-size:29px;
+    }
+
+    .mensaje{
+        font-size:17px;
+    }
+
+    .intro,
+    .carro-intro{
+        font-size:21px;
+    }
+
+    .lugar{
+        font-size:35px;
+        letter-spacing:6px;
+    }
+
+    .texto-final{
+        font-size:18px;
+    }
+
+    .conexion{
+        font-size:25px;
+    }
+
+    .frase-lima{
+        font-size:21px;
+    }
+
+    .frase-lima-2{
+        font-size:35px;
+    }
+
+    .frase-lima-3{
+        font-size:19px;
+    }
+
+    .momentos-intro{
+        font-size:21px;
+    }
+
+    .momento-texto{
+        font-size:18px;
+    }
+
+    .frase-momentos{
+        font-size:21px;
+    }
+
+    .frase-carro{
+        font-size:21px;
+    }
+
+    .frase-mano{
+        font-size:19px;
+    }
+
+    .fotos-secundarias{
+        gap:12px;
+    }
+
+    .mirada-intro{
+        font-size:23px;
+    }
+
+    .mirada-texto{
+        font-size:19px;
+    }
+
+    .mirada-especial{
+        font-size:24px;
+    }
+
+    .mirada-final{
+        font-size:22px;
+    }
+
+    .provocaste-intro{
+        font-size:23px;
+    }
+
+    .provocaste-texto{
+        font-size:19px;
+    }
+
+    .provocaste-destacado{
+        font-size:24px;
+    }
+
+    .provocaste-final{
+        font-size:22px;
+    }
+
+    .cancion-nombre{
+        font-size:29px;
+    }
+
+    .cancion-mensaje{
+        font-size:19px;
+    }
+
+    .carta{
+        font-size:18px;
+        line-height:1.9;
+    }
+
+    .carta-saludo{
+        font-size:25px;
+    }
+
+    .futuro-intro{
+        font-size:24px;
+    }
+
+    .futuro-texto{
+        font-size:19px;
+    }
+
+    .futuro-lista{
+        font-size:20px;
+    }
+
+    .final-titulo{
+        font-size:29px;
+    }
+
+    .final-texto{
+        font-size:19px;
+    }
+
+    .final-desayuno{
+        font-size:24px;
+    }
+
+    .final-amor{
+        font-size:28px;
+    }
+
+}
+
+
+/* =========================
+   SECCIONES OCULTAS
+========================= */
+
+#provocaste,
+#cancion,
+#carta,
+#futuro,
+#final{
+    flex-direction:column;
+}
+
+</style>
 
 </head>
 
@@ -817,635 +909,1110 @@
 <body>
 
 
-    <!-- =====================================
-         ESCENA 1 — PORTADA
-    ===================================== -->
+<!-- =====================================================
+     1. PORTADA
+===================================================== -->
 
-    <section id="portada" class="escena">
+<section id="portada" class="escena">
 
-        <div class="contenedor">
+<div class="contenedor">
 
-            <div class="corazon">
-                ❤️
-            </div>
+<div class="corazon">❤️</div>
 
-            <h1>
-                Hola, mi amor Melissa
-            </h1>
+<h1>
+Hola, mi amor Melissa
+</h1>
 
-            <div class="mensaje">
+<div class="mensaje">
 
-                Hice esto pensando en ti.
+Hice esto pensando en ti.
 
-                <br><br>
+<br><br>
 
-                Hay una pequeña historia
-                que quiero recordarte...
+Hay una pequeña historia
+que quiero recordarte...
 
-            </div>
+</div>
 
-            <button onclick="abrirHistoria()">
-                Abrir nuestra historia ❤️
-            </button>
+<button onclick="abrirHistoria()">
+Abrir nuestra historia ❤️
+</button>
 
-        </div>
+</div>
 
-    </section>
+</section>
 
 
 
-    <!-- =====================================
-         ESCENA 2 — IQUITOS
-    ===================================== -->
+<!-- =====================================================
+     2. IQUITOS
+===================================================== -->
 
-    <section id="iquitos" class="escena">
+<section id="iquitos" class="escena">
 
-        <div class="contenedor">
+<div class="contenedor">
 
-            <div class="intro">
+<div class="intro">
 
-                Quién iba a pensar que un viaje...
+Quién iba a pensar que un viaje...
 
-                <br><br>
+<br><br>
 
-                <strong>
-                    nos llevaría a descubrir
-                    una bonita conexión.
-                </strong>
+<strong>
+nos llevaría a descubrir
+una bonita conexión.
+</strong>
 
-            </div>
+</div>
 
-            <div class="fecha">
-                12 · 07 · 2026
-            </div>
+<div class="fecha">
+12 · 07 · 2026
+</div>
 
-            <div class="lugar">
-                IQUITOS
-            </div>
+<div class="lugar">
+IQUITOS
+</div>
 
-            <div class="foto foto-1">
+<div class="foto foto-1">
 
-                <img
-                    src="iquitos-01.jpg"
-                    alt="Nuestro primer día en Iquitos"
-                >
+<img src="iquitos-01.jpg"
+alt="Nuestro primer día en Iquitos">
 
-            </div>
+</div>
 
-            <div class="foto foto-2">
+<div class="foto foto-2">
 
-                <img
-                    src="iquitos-02.jpg"
-                    alt="Nuestro primer día en Iquitos"
-                >
+<img src="iquitos-02.jpg"
+alt="Nuestro primer día en Iquitos">
 
-            </div>
+</div>
 
-            <div class="texto-final">
+<div class="texto-final">
 
-                Unos días para conocernos.
+Unos días para conocernos.
 
-                <br>
+<br>
 
-                Unos días para compartir.
+Unos días para compartir.
 
-                <br>
+<br>
 
-                Unos días para descubrir
-                algo que ninguno de los dos esperaba.
+Unos días para descubrir
+algo que ninguno de los dos esperaba.
 
-                <div class="conexion">
-                    Una bonita conexión. ❤️
-                </div>
+<div class="conexion">
+Una bonita conexión. ❤️
+</div>
 
-                Y un beso antes de volver a Lima.
+Y un beso antes de volver a Lima.
 
-            </div>
+</div>
 
-            <button
-                class="continuar"
-                onclick="irALima()"
-            >
-                Continuar
-            </button>
+<button
+class="continuar"
+onclick="irALima()">
 
-        </div>
+Continuar
 
-    </section>
+</button>
 
+</div>
 
+</section>
 
-    <!-- =====================================
-         ESCENA 3 — PERO NO
-    ===================================== -->
 
-    <section id="lima" class="escena">
 
-        <div class="contenedor">
+<!-- =====================================================
+     3. PERO NO
+===================================================== -->
 
-            <div class="lima-texto">
+<section id="lima" class="escena">
 
-                <div class="frase-lima">
+<div class="contenedor">
 
-                    Pensamos que lo que pasó
-                    en Iquitos se quedaba en Iquitos.
+<div class="lima-texto">
 
-                </div>
+<div class="frase-lima">
 
-                <div class="frase-lima-2">
-                    Pero no.
-                </div>
+Pensamos que lo que pasó
+en Iquitos se quedaba en Iquitos.
 
-                <div class="frase-lima-3">
+</div>
 
-                    Volvimos a buscarnos.
+<div class="frase-lima-2">
+Pero no.
+</div>
 
-                    <br><br>
+<div class="frase-lima-3">
 
-                    Y aquella bonita conexión
-                    comenzó a convertirse en algo más.
+Volvimos a buscarnos.
 
-                </div>
+<br><br>
 
-                <button
-                    class="boton-lima"
-                    onclick="irAMomentos()"
-                >
-                    Continuar →
-                </button>
+Y aquella bonita conexión
+comenzó a convertirse en algo más.
 
-            </div>
+</div>
 
-        </div>
+<button
+class="boton-lima"
+onclick="irAMomentos()">
 
-    </section>
+Continuar →
 
+</button>
 
+</div>
 
-    <!-- =====================================
-         ESCENA 4 — MOMENTOS
-    ===================================== -->
+</div>
 
-    <section id="momentos" class="escena">
+</section>
 
-        <div class="contenedor">
 
-            <div class="momentos-intro">
 
-                Y poco a poco...
+<!-- =====================================================
+     4. MOMENTOS
+===================================================== -->
 
-                <br>
+<section id="momentos" class="escena">
 
-                empezamos a encontrar
-                cualquier excusa para vernos.
+<div class="contenedor">
 
-            </div>
+<div class="momentos-intro">
 
+Y poco a poco...
 
-            <div class="momento">
+<br>
 
-                <div class="momento-titulo">
-                    Un lugar
-                </div>
+empezamos a encontrar
+cualquier excusa para vernos.
 
-                <img
-                    src="7tapas.jpg"
-                    alt="Una salida juntos"
-                >
+</div>
 
-                <div class="momento-texto">
-                    Una salida.
-                </div>
 
-            </div>
+<div class="momento">
 
+<div class="momento-titulo">
+Un lugar
+</div>
 
-            <div class="momento">
+<img src="7tapas.jpg"
+alt="Una salida juntos">
 
-                <div class="momento-titulo">
-                    Otra salida
-                </div>
+<div class="momento-texto">
+Una salida.
+</div>
 
-                <img
-                    src="celeste-01.jpg"
-                    alt="Una salida juntos"
-                >
+</div>
 
-                <div class="momento-texto">
 
-                    Otra conversación.
+<div class="momento">
 
-                    <br>
+<div class="momento-titulo">
+Otra salida
+</div>
 
-                    Otro momento juntos.
+<img src="celeste-01.jpg"
+alt="Una salida juntos">
 
-                </div>
+<div class="momento-texto">
 
-            </div>
+Otra conversación.
 
+<br>
 
-            <div class="momento">
+Otro momento juntos.
 
-                <img
-                    src="celeste-02.jpg"
-                    alt="Un momento juntos"
-                >
+</div>
 
-            </div>
+</div>
 
 
-            <div class="momento">
+<div class="momento">
 
-                <div class="momento-titulo">
-                    Antes del trabajo
-                </div>
+<img src="celeste-02.jpg"
+alt="Un momento juntos">
 
-                <img
-                    src="desayuno.jpg"
-                    alt="Desayuno juntos antes del trabajo"
-                >
+</div>
 
-                <div class="momento-texto">
 
-                    Un desayuno juntos
-                    antes de empezar el día.
+<div class="momento">
 
-                </div>
+<div class="momento-titulo">
+Antes del trabajo
+</div>
 
-            </div>
+<img src="desayuno.jpg"
+alt="Desayuno juntos">
 
+<div class="momento-texto">
 
-            <div class="frase-momentos">
+Un desayuno juntos
+antes de empezar el día.
 
-                Y poco a poco entendí...
+</div>
 
-                <br><br>
+</div>
 
-                que no necesitaba
-                hacer algo extraordinario contigo.
 
-                <br><br>
+<div class="frase-momentos">
 
-                Me bastaba con tenerte cerca.
+Y poco a poco entendí...
 
-            </div>
+<br><br>
 
+que no necesitaba
+hacer algo extraordinario contigo.
 
-            <button
-                class="boton-momentos"
-                onclick="irACarro()"
-            >
-                Continuar ❤️
-            </button>
+<br><br>
 
-        </div>
+Me bastaba con tenerte cerca.
 
-    </section>
+</div>
 
 
+<button
+class="boton-momentos"
+onclick="irACarro()">
 
-    <!-- =====================================
-         ESCENA 5 — CARRO
-    ===================================== -->
+Continuar ❤️
 
-    <section id="carro" class="escena">
+</button>
 
-        <div class="contenedor">
+</div>
 
-            <div class="carro-intro">
+</section>
 
-                Y es que contigo
-                hasta los momentos más simples
-                se sienten diferentes.
 
-            </div>
 
+<!-- =====================================================
+     5. CARRO
+===================================================== -->
 
-            <div class="foto-principal">
+<section id="carro" class="escena">
 
-                <img
-                    src="carro-01.jpg"
-                    alt="Un momento juntos en el carro"
-                >
+<div class="contenedor">
 
-            </div>
+<div class="carro-intro">
 
+Y es que contigo
+hasta los momentos más simples
+se sienten diferentes.
 
-            <div class="frase-carro">
+</div>
 
-                Hablar.
 
-                <br>
+<div class="foto-principal">
 
-                Reírnos.
+<img src="carro-01.jpg"
+alt="Un momento juntos en el carro">
 
-                <br>
+</div>
 
-                Mirarnos.
 
-                <br>
+<div class="frase-carro">
 
-                Buscar tu mano.
+Hablar.
 
-            </div>
+<br>
 
+Reírnos.
 
-            <div class="frase-mano">
+<br>
 
-                Cuando manejo,
-                siempre termino buscando tu mano.
+Mirarnos.
 
-                <div class="broma-mano">
+<br>
 
-                    Incluso aprendí a manejar
-                    con una sola mano por ti. 😂❤️
+Buscar tu mano.
 
-                </div>
+</div>
 
-            </div>
 
+<div class="frase-mano">
 
-            <div class="fotos-secundarias">
+Cuando manejo,
+siempre termino buscando tu mano.
 
-                <div class="foto-secundaria">
+<div class="broma-mano">
 
-                    <img
-                        src="carro-02.jpg"
-                        alt="Otro momento juntos"
-                    >
+Incluso aprendí a manejar
+con una sola mano por ti. 😂❤️
 
-                </div>
+</div>
 
-                <div class="foto-secundaria">
+</div>
 
-                    <img
-                        src="carro-03.jpg"
-                        alt="Otro momento juntos"
-                    >
 
-                </div>
+<div class="fotos-secundarias">
 
-            </div>
+<div class="foto-secundaria">
 
+<img src="carro-02.jpg"
+alt="Otro momento juntos">
 
-            <button
-                class="boton-carro"
-                onclick="irAMirada()"
-            >
-                Continuar ❤️
-            </button>
+</div>
 
-        </div>
+<div class="foto-secundaria">
 
-    </section>
+<img src="carro-03.jpg"
+alt="Otro momento juntos">
 
+</div>
 
+</div>
 
-    <!-- =====================================
-         ESCENA 6 — TU MIRADA
-    ===================================== -->
 
-    <section id="mirada" class="escena">
+<button
+class="boton-carro"
+onclick="irAMirada()">
 
-        <div class="contenedor">
+Continuar ❤️
 
+</button>
 
-            <div class="mirada-intro">
+</div>
 
-                Hay algo de ti
-                que nunca voy a olvidar.
+</section>
 
-                <br><br>
 
-                La forma en que me miras.
 
-            </div>
+<!-- =====================================================
+     6. TU MIRADA
+===================================================== -->
 
+<section id="mirada" class="escena">
 
-            <div class="mirada-foto">
+<div class="contenedor">
 
-                <img
-                    src="mirada.jpg"
-                    alt="Un momento juntos"
-                >
+<div class="mirada-intro">
 
-            </div>
+Hay algo de ti
+que nunca voy a olvidar.
 
+<br><br>
 
-            <div class="mirada-texto">
+La forma en que me miras.
 
+</div>
 
-                <div class="mirada-bloque">
 
-                    Siento que cuando me miras,
+<div class="mirada-foto">
 
-                    <br>
+<img src="mirada.jpg"
+alt="Un momento juntos">
 
-                    no ves solamente
-                    al Luis Díaz que todos conocen.
+</div>
 
-                </div>
 
+<div class="mirada-texto">
 
-                <div class="mirada-bloque">
 
-                    Tú siempre dices que conociste
+<div class="mirada-bloque">
 
-                    <div class="mirada-especial">
+Siento que cuando me miras,
 
-                        a otro Luis Díaz.
+<br>
 
-                    </div>
+no ves solamente
+al Luis Díaz que todos conocen.
 
-                    Y creo que tienes razón.
+</div>
 
-                </div>
 
+<div class="mirada-bloque">
 
-                <div class="mirada-bloque">
+Tú siempre dices que conociste
 
-                    Porque contigo también conocí
+<div class="mirada-especial">
 
-                    <div class="mirada-especial">
+a otro Luis Díaz.
 
-                        mi mejor versión.
+</div>
 
-                    </div>
+Y creo que tienes razón.
 
-                </div>
+</div>
 
 
-                <div class="mirada-gracias">
+<div class="mirada-bloque">
 
-                    Gracias por mirarme así.
+Porque contigo también conocí
 
-                    <br><br>
+<div class="mirada-especial">
 
-                    Gracias por hacerme sentir
-                    tan querido, tan especial
-                    y tan yo.
+mi mejor versión.
 
-                </div>
+</div>
 
+</div>
 
-                <div class="mirada-final">
 
-                    Siento que nadie me miró
-                    como lo haces tú. ❤️
+<div class="mirada-gracias">
 
-                </div>
+Gracias por mirarme así.
 
+<br><br>
 
-            </div>
+Gracias por hacerme sentir
+tan querido, tan especial
+y tan yo.
 
+</div>
 
-            <button
-                class="boton-mirada"
-                onclick="irALoQueProvocaste()"
-            >
-                Continuar ❤️
-            </button>
 
+<div class="mirada-final">
 
-        </div>
+Siento que nadie me miró
+como lo haces tú. ❤️
 
-    </section>
+</div>
 
 
+</div>
 
-    <script>
 
+<button
+class="boton-mirada"
+onclick="irAProvocaste()">
 
-        /* =====================================
-           PORTADA → IQUITOS
-        ===================================== */
+Continuar ❤️
 
-        function abrirHistoria() {
+</button>
 
-            const portada =
-                document.getElementById("portada");
+</div>
 
-            const iquitos =
-                document.getElementById("iquitos");
+</section>
 
-            portada.style.opacity = "0";
 
-            setTimeout(function() {
 
-                portada.style.display = "none";
+<!-- =====================================================
+     7. LO QUE PROVOCASTE EN MÍ
+===================================================== -->
 
-                iquitos.style.display = "flex";
+<section id="provocaste" class="escena">
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+<div class="contenedor">
 
-            }, 1500);
 
-        }
+<div class="provocaste-intro">
 
+Cuando te conocí,
+algo cambió en mí.
 
+</div>
 
-        /* =====================================
-           IQUITOS → LIMA
-        ===================================== */
 
-        function irALima() {
+<div class="provocaste-texto">
 
-            document.getElementById("iquitos")
-                .style.display = "none";
 
-            document.getElementById("lima")
-                .style.display = "flex";
+<div class="provocaste-bloque">
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+Antes de ti,
+sentía que estaba un poco apagado.
 
-        }
+<br><br>
 
+No tenía mucha energía.
+Me sentía cansado,
+sin muchas ganas de hacer cosas.
 
+<br><br>
 
-        /* =====================================
-           LIMA → MOMENTOS
-        ===================================== */
+Hasta llegué a pensar
+que quizá algo me estaba pasando.
 
-        function irAMomentos() {
+</div>
 
-            document.getElementById("lima")
-                .style.display = "none";
 
-            document.getElementById("momentos")
-                .style.display = "flex";
+<div class="provocaste-bloque">
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+Y entonces apareciste tú.
 
-        }
+</div>
 
 
+<div class="provocaste-bloque">
 
-        /* =====================================
-           MOMENTOS → CARRO
-        ===================================== */
+Y poco a poco volvieron cosas
+que tenía un tiempo sin sentir.
 
-        function irACarro() {
+<div class="provocaste-destacado">
 
-            document.getElementById("momentos")
-                .style.display = "none";
+Ilusión.<br>
+Motivación.<br>
+Alegría.<br>
+Tranquilidad.
 
-            document.getElementById("carro")
-                .style.display = "flex";
+</div>
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+</div>
 
-        }
 
+<div class="provocaste-bloque">
 
+Volví a tener ganas.
 
-        /* =====================================
-           CARRO → MIRADA
-        ===================================== */
+<br><br>
 
-        function irAMirada() {
+Ganas de salir temprano del trabajo
+para verte.
 
-            document.getElementById("carro")
-                .style.display = "none";
+<br>
 
-            document.getElementById("mirada")
-                .style.display = "flex";
+Ganas de compartir.
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+<br>
 
-        }
+Ganas de sonreír.
 
+</div>
 
 
-        /* =====================================
-           MIRADA → SIGUIENTE ESCENA
-           TEMPORAL
-        ===================================== */
+<div class="provocaste-final">
 
-        function irALoQueProvocaste() {
+Y, sobre todo,
 
-            alert(
-                "Y entonces apareciste tú... ❤️"
-            );
+<br><br>
 
-        }
+volví a sentir
+que alguien me quiere.
 
+❤️
 
-    </script>
+</div>
+
+
+</div>
+
+
+<button
+class="boton-provocaste"
+onclick="irACancion()">
+
+Hay una canción que me recuerda a nosotros ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     8. NUESTRA CANCIÓN
+===================================================== -->
+
+<section id="cancion" class="escena">
+
+<div class="contenedor">
+
+
+<div class="cancion-titulo">
+Nuestra canción
+</div>
+
+
+<div class="cancion-nombre">
+
+Antes que el tiempo se vaya
+
+</div>
+
+
+<div class="cancion-artistas">
+
+Fonseca & Juanes
+
+</div>
+
+
+<div class="cancion-mensaje">
+
+Hay canciones que simplemente
+se convierten en parte de una historia.
+
+<br><br>
+
+Y esta quiero que sea una de las
+que siempre nos recuerde a nosotros.
+
+</div>
+
+
+<iframe
+class="spotify"
+src="https://open.spotify.com/embed/track/4lz3N9CKsrJEvNHA5irhEJ?utm_source=generator"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
+
+
+<div class="cancion-nota">
+
+Ponla, escúchala un momento
+y piensa en nosotros. ❤️
+
+</div>
+
+
+<button
+class="boton-cancion"
+onclick="irACarta()">
+
+Continuar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     9. CARTA
+===================================================== -->
+
+<section id="carta" class="escena">
+
+<div class="contenedor">
+
+
+<div class="carta">
+
+
+<div class="carta-saludo">
+
+Para ti, Melissa ❤️
+
+</div>
+
+
+<p>
+
+Amore,
+
+</p>
+
+
+<p>
+
+Si tuviera que explicar
+todo lo que ha pasado estos meses,
+creo que empezaría por decirte
+que no me esperaba esto.
+
+</p>
+
+
+<p>
+
+No me esperaba encontrarte,
+conocerte de esta manera
+y terminar sintiendo todo esto por ti.
+
+</p>
+
+
+<p>
+
+Me gusta nuestra forma de estar juntos.
+Me gusta que podamos hablar durante horas,
+reírnos por cualquier cosa,
+buscar cualquier momento para vernos
+y simplemente disfrutar de estar juntos.
+
+</p>
+
+
+<p>
+
+Me gusta cómo me haces sentir.
+Me gusta saber que estás pendiente de mí,
+que preguntas si llegué bien,
+cómo me fue en el trabajo
+y que quieres verme bien.
+
+</p>
+
+
+<p>
+
+También me gusta sentir
+que tú haces un esfuerzo
+por compartir conmigo
+todo el tiempo que podamos.
+
+</p>
+
+
+<p>
+
+Y quizá una de las cosas
+que más valoro de nosotros
+es que contigo puedo ser yo.
+
+</p>
+
+
+<p>
+
+Tú conociste a otro Luis Díaz.
+
+<br>
+
+Y yo conocí una versión de mí
+que tenía muchas ganas de volver a aparecer.
+
+</p>
+
+
+<p>
+
+No sé exactamente qué nos espera,
+pero sí sé algo:
+
+<br><br>
+
+quiero seguir descubriéndolo contigo.
+
+</p>
+
+
+<p>
+
+Quiero seguir teniendo mañanas contigo,
+seguir buscándote después del trabajo,
+seguir compartiendo viajes,
+conversaciones, risas,
+abrazos y todos esos momentos
+que terminan convirtiéndose
+en nuestros recuerdos.
+
+</p>
+
+
+<p>
+
+Gracias por estos dos meses.
+
+<br>
+
+Gracias por llegar.
+
+<br>
+
+Gracias por quedarte.
+
+</p>
+
+
+<div class="carta-firma">
+
+Te amo.
+
+<br>
+
+Luis ❤️
+
+</div>
+
+
+</div>
+
+
+<button
+class="boton-carta"
+onclick="irAFuturo()">
+
+Y esto recién comienza...
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     10. FUTURO
+===================================================== -->
+
+<section id="futuro" class="escena">
+
+<div class="contenedor">
+
+
+<div class="futuro-intro">
+
+Y cuando pienso en nosotros...
+
+</div>
+
+
+<div class="futuro-texto">
+
+me ilusiona pensar
+en todo lo que todavía
+nos falta vivir.
+
+</div>
+
+
+<div class="futuro-lista">
+
+Despertar juntos. ❤️
+
+<br>
+
+Viajar juntos.
+
+<br>
+
+Compartir nuestros días.
+
+<br>
+
+Hacer planes.
+
+<br>
+
+Reírnos de nuestras cosas.
+
+<br>
+
+Construir nuestra vida.
+
+</div>
+
+
+<div class="futuro-texto">
+
+Quiero que algún día
+todo eso que hoy imaginamos
+
+<br><br>
+
+sea simplemente nuestra vida.
+
+</div>
+
+
+<div class="futuro-final">
+
+Y quiero vivirla contigo.
+
+❤️
+
+</div>
+
+
+<button
+class="boton-futuro"
+onclick="irAFinal()">
+
+Una última cosa... ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     11. FINAL
+===================================================== -->
+
+<section id="final" class="escena">
+
+<div class="contenedor">
+
+
+<div class="final-corazon">
+❤️
+</div>
+
+
+<div class="final-titulo">
+
+Feliz 2 meses, mi amor
+
+</div>
+
+
+<div class="final-texto">
+
+Aunque hay algo
+que ya tengo bastante claro...
+
+<div class="final-desayuno">
+
+Cuando vivamos juntos...
+
+<br><br>
+
+el desayuno corre por mi cuenta. ☕❤️
+
+</div>
+
+
+Mientras tú estás tomando
+una de tus largas duchas...
+
+<br><br>
+
+yo me encargo del desayuno.
+
+<div class="final-broma">
+
+Mucha confianzita, Luis Díaz. 😂
+
+</div>
+
+
+<div class="final-fecha">
+
+18 · 09 · 2026
+
+</div>
+
+
+<div class="final-meses">
+
+2 meses de nosotros.
+
+</div>
+
+
+<div class="final-amor">
+
+Te amo. ❤️
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+function mostrar(ocultar,mostrar){
+
+    document.getElementById(ocultar)
+        .style.display="none";
+
+    document.getElementById(mostrar)
+        .style.display="flex";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* PORTADA */
+
+function abrirHistoria(){
+
+    const portada=document.getElementById("portada");
+
+    const iquitos=document.getElementById("iquitos");
+
+    portada.style.opacity="0";
+
+    setTimeout(function(){
+
+        portada.style.display="none";
+
+        iquitos.style.display="flex";
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    },1500);
+
+}
+
+
+/* IQUITOS */
+
+function irALima(){
+    mostrar("iquitos","lima");
+}
+
+
+/* PERO NO */
+
+function irAMomentos(){
+    mostrar("lima","momentos");
+}
+
+
+/* MOMENTOS */
+
+function irACarro(){
+    mostrar("momentos","carro");
+}
+
+
+/* CARRO */
+
+function irAMirada(){
+    mostrar("carro","mirada");
+}
+
+
+/* MIRADA */
+
+function irAProvocaste(){
+    mostrar("mirada","provocaste");
+}
+
+
+/* PROVOCASTE */
+
+function irACancion(){
+    mostrar("provocaste","cancion");
+}
+
+
+/* CANCIÓN */
+
+function irACarta(){
+    mostrar("cancion","carta");
+}
+
+
+/* CARTA */
+
+function irAFuturo(){
+    mostrar("carta","futuro");
+}
+
+
+/* FUTURO */
+
+function irAFinal(){
+    mostrar("futuro","final");
+}
+
+
+</script>
 
 
 </body>

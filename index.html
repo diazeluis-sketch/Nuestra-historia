@@ -2049,82 +2049,204 @@ Una última cosa... ❤️
 
 
 
-<!-- =====================================================
-     11. FINAL
-===================================================== -->
-
+<!-- ==================== FINAL ==================== -->
 <section id="final" class="escena">
 
-<div class="contenedor">
+    <style>
+        #final {
+            position: relative;
+            overflow: hidden;
+        }
 
+        .final-contenido {
+            animation: finalEntrada 1.8s ease-out both;
+        }
 
-<div class="final-corazon">
-❤️
-</div>
+        .final-corazon {
+            font-size: 52px;
+            margin-bottom: 22px;
+            animation: latidoFinal 2.2s ease-in-out infinite;
+        }
 
+        .final-titulo {
+            font-size: 30px;
+            margin-bottom: 28px;
+            color: #8b4a5a;
+            animation: aparecerSuave 1.4s ease-out 0.3s both;
+        }
 
-<div class="final-titulo">
+        .final-frase {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 18px 0;
+            animation: aparecerSuave 1.5s ease-out 0.8s both;
+        }
 
-Feliz 2 meses, mi amor
+        .final-frase-destacada {
+            font-size: 22px;
+            line-height: 1.7;
+            color: #8b4a5a;
+            margin: 28px 0;
+            animation: aparecerSuave 1.6s ease-out 1.2s both;
+        }
 
-</div>
+        .final-broma {
+            margin-top: 28px;
+            font-size: 17px;
+            animation: aparecerSuave 1.5s ease-out 1.8s both;
+        }
 
+        .foto-final {
+            width: 180px;
+            max-width: 55%;
+            margin: 30px auto 24px;
+            display: block;
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(80, 40, 50, 0.18);
+            opacity: 0;
+            animation: fotoEntrada 2s ease-out 2.2s forwards;
+        }
 
-<div class="final-texto">
+        .final-fecha {
+            margin-top: 28px;
+            letter-spacing: 5px;
+            font-size: 13px;
+            opacity: 0;
+            animation: aparecerSuave 1.5s ease-out 2.8s forwards;
+        }
 
-Aunque hay algo
-que ya tengo bastante claro...
+        .final-meses {
+            margin-top: 18px;
+            font-size: 15px;
+            opacity: 0;
+            animation: aparecerSuave 1.5s ease-out 3.1s forwards;
+        }
 
-<div class="final-desayuno">
+        .final-te-amo {
+            margin-top: 28px;
+            font-size: 27px;
+            color: #8b4a5a;
+            opacity: 0;
+            animation: aparecerSuave 1.8s ease-out 3.5s forwards;
+        }
 
-Cuando vivamos juntos...
+        @keyframes finalEntrada {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-<br><br>
+        @keyframes aparecerSuave {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-el desayuno corre por mi cuenta. ☕❤️
+        @keyframes fotoEntrada {
+            from {
+                opacity: 0;
+                transform: scale(0.92) translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
-</div>
+        @keyframes latidoFinal {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.10);
+            }
+        }
 
+        @media (max-width: 600px) {
+            .final-titulo {
+                font-size: 27px;
+            }
 
-Mientras tú estás tomando
-una de tus largas duchas...
+            .final-frase {
+                font-size: 17px;
+            }
 
-<br><br>
+            .final-frase-destacada {
+                font-size: 20px;
+            }
 
-yo me encargo del desayuno.
+            .foto-final {
+                width: 160px;
+            }
 
+            .final-te-amo {
+                font-size: 25px;
+            }
+        }
+    </style>
 
-<div class="final-broma">
+    <div class="contenedor final-contenido">
 
-Mucha confianzita, Luis Díaz. 😂
+        <div class="final-corazon">❤️</div>
 
-</div>
+        <h2 class="final-titulo">
+            Feliz 2 meses, mi amor
+        </h2>
 
+        <p class="final-frase">
+            Aunque hay algo que ya tengo bastante claro...
+        </p>
 
-<div class="final-fecha">
+        <p class="final-frase-destacada">
+            Cuando vivamos juntos...
+        </p>
 
-18 · 09 · 2026
+        <p class="final-frase">
+            el desayuno corre por mi cuenta. ☕❤️
+        </p>
 
-</div>
+        <p class="final-frase">
+            Mientras tú estás tomando una de tus largas duchas...
+        </p>
 
+        <p class="final-frase">
+            yo me encargo del desayuno.
+        </p>
 
-<div class="final-meses">
+        <p class="final-broma">
+            Mucha confianzita, Luis Díaz. 😂
+        </p>
 
-2 meses de nosotros.
+        <!-- FOTO QUE APARECE SOLO AL FINAL -->
+        <img
+            src="foto_final.jpg"
+            alt="Un recuerdo de nosotros"
+            class="foto-final"
+        >
 
-</div>
+        <p class="final-fecha">
+            18 · 09 · 2026
+        </p>
 
+        <p class="final-meses">
+            2 meses de nosotros.
+        </p>
 
-<div class="final-amor">
+        <p class="final-te-amo">
+            Te amo, Melissa. ❤️
+        </p>
 
-Te amo Melissa. ❤️
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 

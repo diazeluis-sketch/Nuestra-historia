@@ -8,33 +8,23 @@
 
     <title>Para Melissa ❤️</title>
 
-
     <style>
-
 
         * {
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-
             margin: 0;
             padding: 0;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             font-family: Georgia, serif;
-
             overflow-x: hidden;
-
         }
 
 
@@ -56,10 +46,24 @@
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 50px 20px;
 
         }
 
+
+        /* =====================================
+           CONTENEDOR
+        ===================================== */
+
+        .contenedor {
+
+            width: 100%;
+
+            max-width: 700px;
+
+            margin: auto;
+
+        }
 
 
         /* =====================================
@@ -79,15 +83,6 @@
 
             transition:
                 opacity 1.5s ease;
-
-        }
-
-
-        .contenedor {
-
-            width: 100%;
-
-            max-width: 700px;
 
         }
 
@@ -164,7 +159,6 @@
         }
 
 
-
         /* =====================================
            ESCENA IQUITOS
         ===================================== */
@@ -192,7 +186,8 @@
 
             line-height: 1.7;
 
-            margin-bottom: 50px;
+            margin:
+                0 auto 50px;
 
             opacity: 0;
 
@@ -285,9 +280,6 @@
             transform:
                 scale(1.03);
 
-            transition:
-                transform 8s ease;
-
         }
 
 
@@ -310,11 +302,6 @@
 
         }
 
-
-
-        /* =====================================
-           TEXTO IQUITOS
-        ===================================== */
 
         .texto-final {
 
@@ -384,9 +371,8 @@
         }
 
 
-
         /* =====================================
-           ESCENA "PERO NO"
+           ESCENA 3 — PERO NO
         ===================================== */
 
         #lima {
@@ -477,6 +463,148 @@
         }
 
 
+        /* =====================================
+           ESCENA 4 — MOMENTOS EN LIMA
+        ===================================== */
+
+        #momentos {
+
+            display: none;
+
+            min-height: 100vh;
+
+            background: #F7F1EC;
+
+            color: #3D3030;
+
+            flex-direction: column;
+
+        }
+
+
+        .momentos-intro {
+
+            max-width: 620px;
+
+            font-size: 25px;
+
+            line-height: 1.8;
+
+            margin:
+                0 auto 55px;
+
+        }
+
+
+        .momento {
+
+            margin-bottom: 80px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 1.8s ease forwards;
+
+        }
+
+
+        .momento:nth-child(2) {
+
+            animation-delay: 0.8s;
+
+        }
+
+
+        .momento:nth-child(3) {
+
+            animation-delay: 1.8s;
+
+        }
+
+
+        .momento:nth-child(4) {
+
+            animation-delay: 2.8s;
+
+        }
+
+
+        .momento img {
+
+            width: 100%;
+
+            max-width: 620px;
+
+            display: block;
+
+            margin: auto;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 15px 40px rgba(70,50,50,0.18);
+
+        }
+
+
+        .momento-texto {
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            margin-top: 25px;
+
+        }
+
+
+        .momento-titulo {
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            color: #8b4a5a;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .frase-momentos {
+
+            max-width: 600px;
+
+            font-size: 25px;
+
+            line-height: 1.8;
+
+            margin:
+                20px auto 60px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 4s;
+
+        }
+
+
+        .boton-momentos {
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 5s;
+
+        }
+
 
         /* =====================================
            ANIMACIONES
@@ -545,7 +673,6 @@
             }
 
         }
-
 
 
         /* =====================================
@@ -638,6 +765,27 @@
 
             }
 
+
+            .momentos-intro {
+
+                font-size: 21px;
+
+            }
+
+
+            .momento-texto {
+
+                font-size: 18px;
+
+            }
+
+
+            .frase-momentos {
+
+                font-size: 21px;
+
+            }
+
         }
 
     </style>
@@ -646,7 +794,6 @@
 
 
 <body>
-
 
 
     <!-- =====================================
@@ -807,7 +954,7 @@
 
 
     <!-- =====================================
-         ESCENA 3 — LIMA / PERO NO
+         ESCENA 3 — PERO NO
     ===================================== -->
 
     <section
@@ -850,7 +997,7 @@
 
                 <button
                     class="boton-lima"
-                    onclick="alert('Aquí comienzan nuestros momentos en Lima ❤️')"
+                    onclick="irAMomentos()"
                 >
 
                     Continuar →
@@ -859,6 +1006,156 @@
 
 
             </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ESCENA 4 — MOMENTOS EN LIMA
+    ===================================== -->
+
+    <section
+        id="momentos"
+        class="escena"
+    >
+
+        <div class="contenedor">
+
+
+            <div class="momentos-intro">
+
+                Y poco a poco...
+
+                <br>
+
+                empezamos a encontrar
+                cualquier excusa para vernos.
+
+            </div>
+
+
+
+            <!-- 7 TAPAS -->
+
+            <div class="momento">
+
+                <div class="momento-titulo">
+
+                    Un lugar
+
+                </div>
+
+                <img
+                    src="7tapas.jpg"
+                    alt="Una salida juntos"
+                >
+
+                <div class="momento-texto">
+
+                    Una salida.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CELESTE 1 -->
+
+            <div class="momento">
+
+                <div class="momento-titulo">
+
+                    Otra salida
+
+                </div>
+
+                <img
+                    src="celeste-01.jpg"
+                    alt="Una salida juntos"
+                >
+
+                <div class="momento-texto">
+
+                    Otra conversación.
+
+                    <br>
+
+                    Otro momento juntos.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CELESTE 2 -->
+
+            <div class="momento">
+
+                <img
+                    src="celeste-02.jpg"
+                    alt="Un momento juntos"
+                >
+
+            </div>
+
+
+
+            <!-- DESAYUNO -->
+
+            <div class="momento">
+
+                <div class="momento-titulo">
+
+                    Antes del trabajo
+
+                </div>
+
+                <img
+                    src="desayuno.jpg"
+                    alt="Desayuno juntos antes del trabajo"
+                >
+
+                <div class="momento-texto">
+
+                    Un desayuno juntos
+                    antes de empezar el día.
+
+                </div>
+
+            </div>
+
+
+
+            <div class="frase-momentos">
+
+                Y poco a poco entendí...
+
+                <br><br>
+
+                que no necesitaba
+                hacer algo extraordinario contigo.
+
+                <br><br>
+
+                Me bastaba con tenerte cerca.
+
+            </div>
+
+
+            <button
+                class="boton-momentos"
+                onclick="irACarro()"
+            >
+
+                Continuar ❤️
+
+            </button>
+
 
         </div>
 
@@ -879,7 +1176,6 @@
             const portada =
                 document.getElementById("portada");
 
-
             const iquitos =
                 document.getElementById("iquitos");
 
@@ -889,12 +1185,9 @@
 
             setTimeout(function() {
 
-
                 portada.style.display = "none";
 
-
                 iquitos.style.display = "flex";
-
 
                 window.scrollTo({
 
@@ -904,7 +1197,6 @@
 
                 });
 
-
             }, 1500);
 
         }
@@ -912,24 +1204,18 @@
 
 
         /* =====================================
-           IR A LIMA
+           IQUITOS → LIMA
         ===================================== */
 
         function irALima() {
 
 
-            const iquitos =
-                document.getElementById("iquitos");
+            document.getElementById("iquitos")
+                .style.display = "none";
 
 
-            const lima =
-                document.getElementById("lima");
-
-
-            iquitos.style.display = "none";
-
-
-            lima.style.display = "flex";
+            document.getElementById("lima")
+                .style.display = "flex";
 
 
             window.scrollTo({
@@ -939,6 +1225,49 @@
                 behavior: "smooth"
 
             });
+
+        }
+
+
+
+        /* =====================================
+           LIMA → MOMENTOS
+        ===================================== */
+
+        function irAMomentos() {
+
+
+            document.getElementById("lima")
+                .style.display = "none";
+
+
+            document.getElementById("momentos")
+                .style.display = "flex";
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+
+        /* =====================================
+           MOMENTOS → CARRO
+           TEMPORAL
+        ===================================== */
+
+        function irACarro() {
+
+
+            alert(
+                "Aquí comienza una de las partes más bonitas de nuestra historia... ❤️"
+            );
 
         }
 

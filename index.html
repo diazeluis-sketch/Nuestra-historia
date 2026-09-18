@@ -1,82 +1,113 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra historia ❤️</title>
 
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f8eef0;
-            font-family: Georgia, serif;
-            color: #4a3035;
-            text-align: center;
+```
+<title>Para Melissa ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #f8eef0, #f3dfe4);
+        font-family: Georgia, serif;
+        color: #4a3035;
+        text-align: center;
+    }
+
+    .contenedor {
+        width: 90%;
+        max-width: 520px;
+        padding: 45px 25px;
+    }
+
+    .corazon {
+        font-size: 58px;
+        margin-bottom: 25px;
+        animation: latido 1.8s infinite;
+    }
+
+    h1 {
+        font-size: 34px;
+        font-weight: normal;
+        margin: 0 0 22px;
+    }
+
+    .mensaje {
+        font-size: 19px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 15px 32px;
+        border: none;
+        border-radius: 30px;
+        background: #8b4a5a;
+        color: white;
+        font-family: Georgia, serif;
+        font-size: 17px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        transition: transform 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.04);
+    }
+
+    @keyframes latido {
+        0%, 100% {
+            transform: scale(1);
         }
 
-        .contenedor {
-            max-width: 500px;
-            padding: 40px 25px;
+        50% {
+            transform: scale(1.12);
         }
+    }
+</style>
+```
 
-        .corazon {
-            font-size: 55px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        button {
-            margin-top: 25px;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 30px;
-            background: #8b4a5a;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="contenedor">
+```
+<div class="contenedor">
 
-        <div class="corazon">❤️</div>
+    <div class="corazon">❤️</div>
 
-        <h1>Hola, bebé</h1>
+    <h1>Hola, mi amor Melissa</h1>
 
-        <p>
-            Hice esto pensando en ti.
-        </p>
-
-        <p>
-            Hay algo que quiero recordarte...
-        </p>
-
-        <button onclick="alert('Nuestra historia apenas comienza... ❤️')">
-            Abrir nuestra historia
-        </button>
-
+    <div class="mensaje">
+        Hice esto pensando en ti.
+        <br><br>
+        Hay una pequeña historia que quiero recordarte...
     </div>
+
+    <button onclick="abrirHistoria()">
+        Abrir nuestra historia ❤️
+    </button>
+
+</div>
+
+<script>
+    function abrirHistoria() {
+        alert("Y pensar que todo comenzó en Iquitos... ❤️");
+    }
+</script>
+```
 
 </body>
 </html>
+

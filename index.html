@@ -14,24 +14,23 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #111;
-            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
             color: white;
+            font-family: Georgia, serif;
             overflow-x: hidden;
         }
 
 
-        /* =========================
+        /* =================================
            ESCENAS
-        ========================= */
+        ================================= */
 
         .escena {
             min-height: 100vh;
@@ -40,13 +39,13 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 25px;
+            padding: 40px 20px;
         }
 
 
-        /* =========================
+        /* =================================
            PORTADA
-        ========================= */
+        ================================= */
 
         #portada {
 
@@ -60,15 +59,15 @@
             color: #4a3035;
 
             transition:
-                opacity 1.2s ease;
+                opacity 1.5s ease;
 
         }
 
 
         .contenedor {
 
-            width: 90%;
-            max-width: 650px;
+            width: 100%;
+            max-width: 700px;
 
         }
 
@@ -128,10 +127,11 @@
             cursor: pointer;
 
             box-shadow:
-                0 5px 15px rgba(0,0,0,0.2);
+                0 5px 20px rgba(0,0,0,0.25);
 
             transition:
-                transform 0.2s;
+                transform 0.3s ease,
+                opacity 0.3s ease;
 
         }
 
@@ -144,36 +144,43 @@
         }
 
 
-        /* =========================
-           ESCENA IQUITOS
-        ========================= */
+        /* =================================
+           IQUITOS
+        ================================= */
 
         #iquitos {
 
             display: none;
 
-            position: relative;
-
-            flex-direction: column;
-
-            background: #111;
-
             min-height: 100vh;
 
-            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #222 0%,
+                    #0d0d0d 70%
+                );
+
+            flex-direction: column;
 
         }
 
 
-        .texto-intro {
+        /* =================================
+           INTRO
+        ================================= */
+
+        .intro {
 
             max-width: 600px;
 
-            font-size: 24px;
+            font-size: 25px;
 
             line-height: 1.7;
 
-            margin-bottom: 45px;
+            margin-bottom: 50px;
+
+            opacity: 0;
 
             animation:
                 aparecer 2s ease forwards;
@@ -181,51 +188,78 @@
         }
 
 
-        .fecha {
+        .intro strong {
 
-            font-size: 16px;
-
-            letter-spacing: 5px;
-
-            margin-top: 25px;
-
-            opacity: 0.75;
+            font-weight: normal;
 
         }
 
+
+        /* =================================
+           FECHA
+        ================================= */
+
+        .fecha {
+
+            font-size: 15px;
+
+            letter-spacing: 6px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 1s;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =================================
+           LUGAR
+        ================================= */
 
         .lugar {
 
             font-size: 48px;
 
-            letter-spacing: 7px;
+            letter-spacing: 9px;
 
-            margin-top: 12px;
+            margin-bottom: 40px;
 
-            margin-bottom: 30px;
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 1.5s;
 
         }
 
 
-        /* =========================
+        /* =================================
            FOTOGRAFÍAS
-        ========================= */
+        ================================= */
 
         .foto {
 
             width: 100%;
 
-            max-width: 650px;
+            max-width: 620px;
 
             margin:
-                20px auto;
-
-            border-radius: 5px;
+                25px auto;
 
             overflow: hidden;
 
+            border-radius: 4px;
+
             box-shadow:
-                0 15px 50px rgba(0,0,0,0.55);
+                0 20px 60px rgba(0,0,0,0.65);
+
+            opacity: 0;
 
         }
 
@@ -238,23 +272,64 @@
 
             height: auto;
 
+            transform:
+                scale(1.03);
+
+            transition:
+                transform 8s ease;
+
         }
 
 
-        /* =========================
-           TEXTO FINAL
-        ========================= */
+        .foto:hover img {
+
+            transform:
+                scale(1.08);
+
+        }
+
+
+        .foto-1 {
+
+            animation:
+                fotoEntrada 2s ease forwards;
+
+            animation-delay: 2.5s;
+
+        }
+
+
+        .foto-2 {
+
+            animation:
+                fotoEntrada 2s ease forwards;
+
+            animation-delay: 4.5s;
+
+        }
+
+
+        /* =================================
+           TEXTO
+        ================================= */
 
         .texto-final {
 
-            max-width: 600px;
+            max-width: 580px;
 
             font-size: 20px;
 
-            line-height: 1.8;
+            line-height: 1.9;
 
             margin:
-                35px auto 0;
+                45px auto 0;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 6s;
 
         }
 
@@ -263,28 +338,41 @@
 
             font-size: 28px;
 
-            margin-top: 20px;
+            margin-top: 25px;
+
+            margin-bottom: 20px;
 
         }
 
 
+        /* =================================
+           BOTÓN
+        ================================= */
+
         .continuar {
 
-            margin-top: 45px;
+            margin-top: 50px;
 
-            margin-bottom: 30px;
+            margin-bottom: 40px;
 
             background: transparent;
 
             border:
                 1px solid rgba(255,255,255,0.5);
 
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 7.5s;
+
         }
 
 
-        /* =========================
+        /* =================================
            ANIMACIONES
-        ========================= */
+        ================================= */
 
         @keyframes aparecer {
 
@@ -293,7 +381,30 @@
                 opacity: 0;
 
                 transform:
-                    translateY(20px);
+                    translateY(25px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        @keyframes fotoEntrada {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
 
             }
 
@@ -328,11 +439,19 @@
         }
 
 
-        /* =========================
+        /* =================================
            CELULAR
-        ========================= */
+        ================================= */
 
         @media (max-width: 600px) {
+
+            .escena {
+
+                padding:
+                    35px 18px;
+
+            }
+
 
             h1 {
 
@@ -348,18 +467,29 @@
             }
 
 
-            .texto-intro {
+            .intro {
 
                 font-size: 21px;
+
+                margin-bottom: 40px;
+
+            }
+
+
+            .fecha {
+
+                font-size: 13px;
+
+                letter-spacing: 4px;
 
             }
 
 
             .lugar {
 
-                font-size: 38px;
+                font-size: 35px;
 
-                letter-spacing: 5px;
+                letter-spacing: 6px;
 
             }
 
@@ -367,6 +497,21 @@
             .texto-final {
 
                 font-size: 18px;
+
+            }
+
+
+            .conexion {
+
+                font-size: 25px;
+
+            }
+
+
+            .foto {
+
+                margin:
+                    18px auto;
 
             }
 
@@ -380,9 +525,9 @@
 <body>
 
 
-    <!-- ====================================
+    <!-- =================================
          ESCENA 1 — PORTADA
-    ===================================== -->
+    ================================= -->
 
     <section
         id="portada"
@@ -433,9 +578,9 @@
 
 
 
-    <!-- ====================================
+    <!-- =================================
          ESCENA 2 — IQUITOS
-    ===================================== -->
+    ================================= -->
 
     <section
         id="iquitos"
@@ -445,7 +590,7 @@
         <div class="contenedor">
 
 
-            <div class="texto-intro">
+            <div class="intro">
 
                 Quién iba a pensar que un viaje...
 
@@ -478,7 +623,7 @@
 
             <!-- FOTO 1 -->
 
-            <div class="foto">
+            <div class="foto foto-1">
 
                 <img
                     src="iquitos-01.jpg"
@@ -491,7 +636,7 @@
 
             <!-- FOTO 2 -->
 
-            <div class="foto">
+            <div class="foto foto-2">
 
                 <img
                     src="iquitos-02.jpg"
@@ -501,6 +646,8 @@
             </div>
 
 
+
+            <!-- TEXTO -->
 
             <div class="texto-final">
 
@@ -522,8 +669,6 @@
 
                 </div>
 
-
-                <br>
 
                 Y un beso antes de volver a Lima.
 
@@ -550,9 +695,9 @@
     <script>
 
 
-        /* ====================================
+        /* =================================
            ABRIR HISTORIA
-        ==================================== */
+        ================================= */
 
         function abrirHistoria() {
 
@@ -580,15 +725,15 @@
 
                 });
 
-            }, 1200);
+            }, 1500);
 
         }
 
 
 
-        /* ====================================
-           SIGUIENTE ESCENA
-        ==================================== */
+        /* =================================
+           TEMPORAL
+        ================================= */
 
         function siguienteEscena() {
 

@@ -8,119 +8,70 @@
 
     <title>Para Melissa ❤️</title>
 
-
     <style>
-
 
         * {
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-
             margin: 0;
             padding: 0;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             font-family: Georgia, serif;
-
             overflow-x: hidden;
-
         }
-
-
-        /* =====================================
-           ESCENAS
-        ===================================== */
 
         .escena {
-
             min-height: 100vh;
-
             width: 100%;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             text-align: center;
-
             padding: 50px 20px;
-
         }
-
 
         .contenedor {
-
             width: 100%;
-
             max-width: 700px;
-
             margin: auto;
-
         }
 
 
-
-        /* =====================================
+        /* ================================
            BOTONES
-        ===================================== */
+        ================================= */
 
         button {
-
-            padding:
-                15px 32px;
-
+            padding: 15px 32px;
             border: none;
-
             border-radius: 30px;
-
             background: #8b4a5a;
-
             color: white;
-
             font-family: Georgia, serif;
-
             font-size: 17px;
-
             cursor: pointer;
-
-            box-shadow:
-                0 5px 20px rgba(70,50,50,0.15);
-
-            transition:
-                transform 0.3s ease,
-                background 0.3s ease;
-
+            box-shadow: 0 5px 20px rgba(70,50,50,0.15);
+            transition: transform 0.3s ease,
+                        background 0.3s ease;
         }
-
 
         button:hover {
-
-            transform:
-                scale(1.04);
-
+            transform: scale(1.04);
         }
 
 
-
-        /* =====================================
+        /* ================================
            PORTADA
-        ===================================== */
+        ================================= */
 
         #portada {
-
             background:
                 linear-gradient(
                     135deg,
@@ -130,99 +81,61 @@
 
             color: #4a3035;
 
-            transition:
-                opacity 1.5s ease;
-
+            transition: opacity 1.5s ease;
         }
 
-
         .corazon {
-
             font-size: 58px;
-
             margin-bottom: 25px;
 
             animation:
                 latido 1.8s infinite;
-
         }
-
 
         h1 {
-
             font-size: 34px;
-
             font-weight: normal;
-
-            margin:
-                0 0 22px;
-
+            margin: 0 0 22px;
         }
-
 
         .mensaje {
-
             font-size: 19px;
-
             line-height: 1.8;
-
             margin-bottom: 30px;
-
         }
 
 
-
-        /* =====================================
+        /* ================================
            IQUITOS
-        ===================================== */
+        ================================= */
 
         #iquitos {
-
             display: none;
-
             min-height: 100vh;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             flex-direction: column;
-
         }
 
-
         .intro {
-
             max-width: 600px;
-
             font-size: 25px;
-
             line-height: 1.7;
-
-            margin:
-                0 auto 50px;
+            margin: 0 auto 50px;
 
             opacity: 0;
 
             animation:
                 aparecer 2s ease forwards;
-
         }
-
 
         .intro strong {
-
             font-weight: normal;
-
         }
 
-
         .fecha {
-
             font-size: 15px;
-
             letter-spacing: 6px;
-
             color: #756565;
 
             opacity: 0;
@@ -233,18 +146,12 @@
             animation-delay: 1s;
 
             margin-bottom: 12px;
-
         }
 
-
         .lugar {
-
             font-size: 48px;
-
             letter-spacing: 9px;
-
             color: #3D3030;
-
             margin-bottom: 40px;
 
             opacity: 0;
@@ -253,78 +160,46 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 1.5s;
-
         }
 
-
-
-        /* =====================================
-           FOTOS IQUITOS
-        ===================================== */
-
         .foto {
-
             width: 100%;
-
             max-width: 620px;
-
-            margin:
-                25px auto;
-
+            margin: 25px auto;
             overflow: hidden;
-
             border-radius: 5px;
 
             box-shadow:
                 0 15px 40px rgba(70,50,50,0.18);
 
             opacity: 0;
-
         }
-
 
         .foto img {
-
             display: block;
-
             width: 100%;
-
             height: auto;
-
         }
 
-
         .foto-1 {
-
             animation:
                 fotoEntrada 2s ease forwards;
 
             animation-delay: 2.5s;
-
         }
 
-
         .foto-2 {
-
             animation:
                 fotoEntrada 2s ease forwards;
 
             animation-delay: 4.5s;
-
         }
 
-
         .texto-final {
-
             max-width: 580px;
-
             font-size: 20px;
-
             line-height: 1.9;
-
-            margin:
-                45px auto 0;
-
+            margin: 45px auto 0;
             color: #4A3B3B;
 
             opacity: 0;
@@ -333,31 +208,20 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 6s;
-
         }
-
 
         .conexion {
-
             font-size: 28px;
-
             margin-top: 25px;
-
             margin-bottom: 20px;
-
             color: #8b4a5a;
-
         }
 
-
         .continuar {
-
             margin-top: 50px;
-
             margin-bottom: 40px;
 
             background: transparent;
-
             color: #8b4a5a;
 
             border:
@@ -369,68 +233,44 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 7.5s;
-
         }
-
 
         .continuar:hover {
-
             background: #8b4a5a;
-
             color: white;
-
         }
 
 
-
-        /* =====================================
-           ESCENA 3 — PERO NO
-        ===================================== */
+        /* ================================
+           PERO NO
+        ================================= */
 
         #lima {
-
             display: none;
-
             min-height: 100vh;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             flex-direction: column;
-
         }
-
 
         .lima-texto {
-
             max-width: 650px;
-
             margin: auto;
-
         }
 
-
         .frase-lima {
-
             font-size: 25px;
-
             line-height: 1.8;
 
             opacity: 0;
 
             animation:
                 aparecer 2.5s ease forwards;
-
         }
 
-
         .frase-lima-2 {
-
             font-size: 42px;
-
             margin-top: 60px;
-
             color: #8b4a5a;
 
             opacity: 0;
@@ -439,16 +279,11 @@
                 aparecer 2.5s ease forwards;
 
             animation-delay: 3s;
-
         }
 
-
         .frase-lima-3 {
-
             font-size: 22px;
-
             line-height: 1.8;
-
             margin-top: 55px;
 
             opacity: 0;
@@ -457,12 +292,9 @@
                 aparecer 2.5s ease forwards;
 
             animation-delay: 5s;
-
         }
 
-
         .boton-lima {
-
             margin-top: 60px;
 
             opacity: 0;
@@ -471,131 +303,79 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 7s;
-
         }
 
 
-
-        /* =====================================
-           ESCENA 4 — MOMENTOS
-        ===================================== */
+        /* ================================
+           MOMENTOS
+        ================================= */
 
         #momentos {
-
             display: none;
-
             min-height: 100vh;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             flex-direction: column;
-
         }
-
 
         .momentos-intro {
-
             max-width: 620px;
-
             font-size: 25px;
-
             line-height: 1.8;
-
-            margin:
-                0 auto 55px;
-
+            margin: 0 auto 55px;
         }
 
-
         .momento {
-
             margin-bottom: 80px;
 
             opacity: 0;
 
             animation:
                 aparecer 1.8s ease forwards;
-
         }
-
 
         .momento:nth-child(2) {
-
             animation-delay: 0.8s;
-
         }
-
 
         .momento:nth-child(3) {
-
             animation-delay: 1.8s;
-
         }
-
 
         .momento:nth-child(4) {
-
             animation-delay: 2.8s;
-
         }
 
-
         .momento img {
-
             width: 100%;
-
             max-width: 620px;
-
             display: block;
-
             margin: auto;
-
             border-radius: 5px;
 
             box-shadow:
                 0 15px 40px rgba(70,50,50,0.18);
-
         }
-
 
         .momento-texto {
-
             font-size: 20px;
-
             line-height: 1.8;
-
             margin-top: 25px;
-
         }
-
 
         .momento-titulo {
-
             font-size: 14px;
-
             letter-spacing: 4px;
-
             color: #8b4a5a;
-
             text-transform: uppercase;
-
             margin-bottom: 12px;
-
         }
 
-
         .frase-momentos {
-
             max-width: 600px;
-
             font-size: 25px;
-
             line-height: 1.8;
-
-            margin:
-                20px auto 60px;
+            margin: 20px auto 60px;
 
             opacity: 0;
 
@@ -603,74 +383,47 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 4s;
-
         }
 
-
         .boton-momentos {
-
             opacity: 0;
 
             animation:
                 aparecer 2s ease forwards;
 
             animation-delay: 5s;
-
         }
 
 
-
-        /* =====================================
-           ESCENA 5 — NUESTRO LUGAR
-        ===================================== */
+        /* ================================
+           ESCENA 5 — CARRO
+        ================================= */
 
         #carro {
-
             display: none;
-
             min-height: 100vh;
-
             background: #F7F1EC;
-
             color: #3D3030;
-
             flex-direction: column;
-
         }
 
-
         .carro-intro {
-
             max-width: 600px;
-
             font-size: 25px;
-
             line-height: 1.8;
-
-            margin:
-                0 auto 55px;
+            margin: 0 auto 55px;
 
             opacity: 0;
 
             animation:
                 aparecer 2s ease forwards;
-
         }
 
-
-        /* FOTO PROTAGONISTA */
-
         .foto-principal {
-
             width: 100%;
-
             max-width: 680px;
-
-            margin:
-                0 auto 50px;
-
+            margin: 0 auto 50px;
             overflow: hidden;
-
             border-radius: 6px;
 
             box-shadow:
@@ -682,32 +435,18 @@
                 fotoGrande 2.5s ease forwards;
 
             animation-delay: 1.5s;
-
         }
-
 
         .foto-principal img {
-
             display: block;
-
             width: 100%;
-
             height: auto;
-
         }
 
-
-        /* TEXTO SOBRE LA FOTOGRAFÍA */
-
         .frase-carro {
-
             max-width: 580px;
-
-            margin:
-                0 auto 60px;
-
+            margin: 0 auto 60px;
             font-size: 24px;
-
             line-height: 1.9;
 
             opacity: 0;
@@ -716,16 +455,11 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 3.5s;
-
         }
 
-
         .palabras {
-
             font-size: 23px;
-
             line-height: 2.2;
-
             margin-bottom: 60px;
 
             opacity: 0;
@@ -734,27 +468,17 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 5s;
-
         }
-
 
         .palabras span {
-
             display: block;
-
         }
 
-
         .frase-mano {
-
             font-size: 21px;
-
             line-height: 1.8;
-
             max-width: 580px;
-
-            margin:
-                0 auto 60px;
+            margin: 0 auto 60px;
 
             opacity: 0;
 
@@ -762,83 +486,50 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 7s;
-
         }
-
 
         .broma-mano {
-
             font-size: 18px;
-
             color: #8b4a5a;
-
             margin-top: 18px;
-
         }
-
-
-        /* FOTOS SECUNDARIAS */
 
         .fotos-secundarias {
-
             display: flex;
-
             gap: 20px;
-
             justify-content: center;
-
-            margin:
-                30px auto 60px;
-
+            margin: 30px auto 60px;
             max-width: 680px;
-
         }
 
-
         .foto-secundaria {
-
             width: 50%;
 
             opacity: 0;
 
             animation:
                 aparecer 2s ease forwards;
-
         }
-
 
         .foto-secundaria:nth-child(1) {
-
             animation-delay: 8s;
-
         }
-
 
         .foto-secundaria:nth-child(2) {
-
             animation-delay: 8.8s;
-
         }
 
-
         .foto-secundaria img {
-
             display: block;
-
             width: 100%;
-
             border-radius: 5px;
 
             box-shadow:
                 0 12px 35px rgba(70,50,50,0.16);
-
         }
 
-
         .boton-carro {
-
             margin-top: 20px;
-
             margin-bottom: 40px;
 
             opacity: 0;
@@ -847,237 +538,273 @@
                 aparecer 2s ease forwards;
 
             animation-delay: 10s;
-
         }
 
 
+        /* ================================
+           ESCENA 6 — TU MIRADA
+        ================================= */
 
-        /* =====================================
+        #mirada {
+            display: none;
+            min-height: 100vh;
+            background: #F7F1EC;
+            color: #3D3030;
+            flex-direction: column;
+        }
+
+        .mirada-intro {
+            max-width: 600px;
+            font-size: 27px;
+            line-height: 1.8;
+            margin: 0 auto 55px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2.5s ease forwards;
+        }
+
+        .mirada-foto {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto 55px;
+            overflow: hidden;
+            border-radius: 6px;
+
+            box-shadow:
+                0 20px 55px rgba(70,50,50,0.22);
+
+            opacity: 0;
+
+            animation:
+                fotoGrande 2.5s ease forwards;
+
+            animation-delay: 2s;
+        }
+
+        .mirada-foto img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .mirada-texto {
+            max-width: 600px;
+            margin: 0 auto;
+
+            font-size: 21px;
+            line-height: 1.9;
+        }
+
+        .mirada-bloque {
+            margin-bottom: 45px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 4s;
+        }
+
+        .mirada-especial {
+            font-size: 27px;
+            color: #8b4a5a;
+            margin: 25px 0;
+        }
+
+        .mirada-gracias {
+            margin-top: 55px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 6.5s;
+        }
+
+        .mirada-final {
+            margin-top: 35px;
+
+            font-size: 25px;
+
+            color: #8b4a5a;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 8s;
+        }
+
+        .boton-mirada {
+            margin-top: 65px;
+            margin-bottom: 40px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 9.5s;
+        }
+
+
+        /* ================================
            ANIMACIONES
-        ===================================== */
+        ================================= */
 
         @keyframes aparecer {
 
             from {
-
                 opacity: 0;
-
-                transform:
-                    translateY(25px);
-
+                transform: translateY(25px);
             }
 
             to {
-
                 opacity: 1;
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
         }
-
 
         @keyframes fotoEntrada {
 
             from {
-
                 opacity: 0;
-
-                transform:
-                    translateY(30px);
-
+                transform: translateY(30px);
             }
 
             to {
-
                 opacity: 1;
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
         }
-
 
         @keyframes fotoGrande {
 
             from {
-
                 opacity: 0;
-
-                transform:
-                    scale(0.97);
-
+                transform: scale(0.97);
             }
 
             to {
-
                 opacity: 1;
-
-                transform:
-                    scale(1);
-
+                transform: scale(1);
             }
 
         }
-
 
         @keyframes latido {
 
             0%, 100% {
-
-                transform:
-                    scale(1);
-
+                transform: scale(1);
             }
 
             50% {
-
-                transform:
-                    scale(1.12);
-
+                transform: scale(1.12);
             }
 
         }
 
 
-
-        /* =====================================
+        /* ================================
            CELULAR
-        ===================================== */
+        ================================= */
 
         @media (max-width: 600px) {
 
-
             .escena {
-
-                padding:
-                    35px 18px;
-
+                padding: 35px 18px;
             }
-
 
             h1 {
-
                 font-size: 29px;
-
             }
-
 
             .mensaje {
-
                 font-size: 17px;
-
             }
-
 
             .intro {
-
                 font-size: 21px;
-
             }
-
 
             .lugar {
-
                 font-size: 35px;
-
                 letter-spacing: 6px;
-
             }
-
 
             .texto-final {
-
                 font-size: 18px;
-
             }
-
 
             .conexion {
-
                 font-size: 25px;
-
             }
-
 
             .frase-lima {
-
                 font-size: 21px;
-
             }
-
 
             .frase-lima-2 {
-
                 font-size: 35px;
-
             }
-
 
             .frase-lima-3 {
-
                 font-size: 19px;
-
             }
-
 
             .momentos-intro {
-
                 font-size: 21px;
-
             }
-
 
             .momento-texto {
-
                 font-size: 18px;
-
             }
-
 
             .frase-momentos {
-
                 font-size: 21px;
-
             }
-
 
             .carro-intro {
-
                 font-size: 21px;
-
             }
-
 
             .frase-carro {
-
                 font-size: 21px;
-
             }
-
 
             .palabras {
-
                 font-size: 20px;
-
             }
-
 
             .frase-mano {
-
                 font-size: 19px;
-
             }
 
-
             .fotos-secundarias {
-
                 gap: 12px;
+            }
 
+            .mirada-intro {
+                font-size: 23px;
+            }
+
+            .mirada-texto {
+                font-size: 19px;
+            }
+
+            .mirada-especial {
+                font-size: 24px;
+            }
+
+            .mirada-final {
+                font-size: 22px;
             }
 
         }
@@ -1087,36 +814,24 @@
 </head>
 
 
-
 <body>
-
 
 
     <!-- =====================================
          ESCENA 1 — PORTADA
     ===================================== -->
 
-    <section
-        id="portada"
-        class="escena"
-    >
+    <section id="portada" class="escena">
 
         <div class="contenedor">
 
-
             <div class="corazon">
-
                 ❤️
-
             </div>
 
-
             <h1>
-
                 Hola, mi amor Melissa
-
             </h1>
-
 
             <div class="mensaje">
 
@@ -1129,15 +844,9 @@
 
             </div>
 
-
-            <button
-                onclick="abrirHistoria()"
-            >
-
+            <button onclick="abrirHistoria()">
                 Abrir nuestra historia ❤️
-
             </button>
-
 
         </div>
 
@@ -1149,13 +858,9 @@
          ESCENA 2 — IQUITOS
     ===================================== -->
 
-    <section
-        id="iquitos"
-        class="escena"
-    >
+    <section id="iquitos" class="escena">
 
         <div class="contenedor">
-
 
             <div class="intro">
 
@@ -1164,28 +869,19 @@
                 <br><br>
 
                 <strong>
-
                     nos llevaría a descubrir
                     una bonita conexión.
-
                 </strong>
 
             </div>
 
-
             <div class="fecha">
-
                 12 · 07 · 2026
-
             </div>
-
 
             <div class="lugar">
-
                 IQUITOS
-
             </div>
-
 
             <div class="foto foto-1">
 
@@ -1196,7 +892,6 @@
 
             </div>
 
-
             <div class="foto foto-2">
 
                 <img
@@ -1205,7 +900,6 @@
                 >
 
             </div>
-
 
             <div class="texto-final">
 
@@ -1220,28 +914,20 @@
                 Unos días para descubrir
                 algo que ninguno de los dos esperaba.
 
-
                 <div class="conexion">
-
                     Una bonita conexión. ❤️
-
                 </div>
-
 
                 Y un beso antes de volver a Lima.
 
             </div>
 
-
             <button
                 class="continuar"
                 onclick="irALima()"
             >
-
                 Continuar
-
             </button>
-
 
         </div>
 
@@ -1253,16 +939,11 @@
          ESCENA 3 — PERO NO
     ===================================== -->
 
-    <section
-        id="lima"
-        class="escena"
-    >
+    <section id="lima" class="escena">
 
         <div class="contenedor">
 
-
             <div class="lima-texto">
-
 
                 <div class="frase-lima">
 
@@ -1271,13 +952,9 @@
 
                 </div>
 
-
                 <div class="frase-lima-2">
-
                     Pero no.
-
                 </div>
-
 
                 <div class="frase-lima-3">
 
@@ -1290,16 +967,12 @@
 
                 </div>
 
-
                 <button
                     class="boton-lima"
                     onclick="irAMomentos()"
                 >
-
                     Continuar →
-
                 </button>
-
 
             </div>
 
@@ -1310,16 +983,12 @@
 
 
     <!-- =====================================
-         ESCENA 4 — MOMENTOS EN LIMA
+         ESCENA 4 — MOMENTOS
     ===================================== -->
 
-    <section
-        id="momentos"
-        class="escena"
-    >
+    <section id="momentos" class="escena">
 
         <div class="contenedor">
-
 
             <div class="momentos-intro">
 
@@ -1336,9 +1005,7 @@
             <div class="momento">
 
                 <div class="momento-titulo">
-
                     Un lugar
-
                 </div>
 
                 <img
@@ -1347,9 +1014,7 @@
                 >
 
                 <div class="momento-texto">
-
                     Una salida.
-
                 </div>
 
             </div>
@@ -1358,9 +1023,7 @@
             <div class="momento">
 
                 <div class="momento-titulo">
-
                     Otra salida
-
                 </div>
 
                 <img
@@ -1394,9 +1057,7 @@
             <div class="momento">
 
                 <div class="momento-titulo">
-
                     Antes del trabajo
-
                 </div>
 
                 <img
@@ -1434,11 +1095,8 @@
                 class="boton-momentos"
                 onclick="irACarro()"
             >
-
                 Continuar ❤️
-
             </button>
-
 
         </div>
 
@@ -1447,32 +1105,27 @@
 
 
     <!-- =====================================
-         ESCENA 5 — NUESTRO LUGAR
+         ESCENA 5 — CARRO
     ===================================== -->
 
-    <section
-        id="carro"
-        class="escena"
-    >
+    <section id="carro" class="escena">
 
         <div class="contenedor">
 
-
             <div class="carro-intro">
 
-                Y entonces descubrí algo...
+                Y es que contigo
+                hasta los momentos más simples
+                se sienten diferentes.
 
             </div>
 
-
-            <!-- FOTO PROTAGONISTA -->
 
             <div class="foto-principal">
 
                 <img
                     src="carro-01.jpg"
-                    alt="Un momento juntos"
-
+                    alt="Un momento juntos en el carro"
                 >
 
             </div>
@@ -1480,25 +1133,19 @@
 
             <div class="frase-carro">
 
-                No necesitaba hacer
-                algo extraordinario contigo.
+                Hablar.
 
-                <br><br>
+                <br>
 
-                Me bastaba con tenerte cerca.
+                Reírnos.
 
-            </div>
+                <br>
 
+                Mirarnos.
 
-            <div class="palabras">
+                <br>
 
-                <span>Hablar.</span>
-
-                <span>Reírnos.</span>
-
-                <span>Mirarnos.</span>
-
-                <span>Buscar tu mano.</span>
+                Buscar tu mano.
 
             </div>
 
@@ -1518,10 +1165,7 @@
             </div>
 
 
-            <!-- FOTOS SECUNDARIAS -->
-
             <div class="fotos-secundarias">
-
 
                 <div class="foto-secundaria">
 
@@ -1532,7 +1176,6 @@
 
                 </div>
 
-
                 <div class="foto-secundaria">
 
                     <img
@@ -1542,7 +1185,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1550,9 +1192,118 @@
                 class="boton-carro"
                 onclick="irAMirada()"
             >
-
                 Continuar ❤️
+            </button>
 
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ESCENA 6 — TU MIRADA
+    ===================================== -->
+
+    <section id="mirada" class="escena">
+
+        <div class="contenedor">
+
+
+            <div class="mirada-intro">
+
+                Hay algo de ti
+                que nunca voy a olvidar.
+
+                <br><br>
+
+                La forma en que me miras.
+
+            </div>
+
+
+            <div class="mirada-foto">
+
+                <img
+                    src="mirada.jpg"
+                    alt="Un momento juntos"
+                >
+
+            </div>
+
+
+            <div class="mirada-texto">
+
+
+                <div class="mirada-bloque">
+
+                    Siento que cuando me miras,
+
+                    <br>
+
+                    no ves solamente
+                    al Luis Díaz que todos conocen.
+
+                </div>
+
+
+                <div class="mirada-bloque">
+
+                    Tú siempre dices que conociste
+
+                    <div class="mirada-especial">
+
+                        a otro Luis Díaz.
+
+                    </div>
+
+                    Y creo que tienes razón.
+
+                </div>
+
+
+                <div class="mirada-bloque">
+
+                    Porque contigo también conocí
+
+                    <div class="mirada-especial">
+
+                        mi mejor versión.
+
+                    </div>
+
+                </div>
+
+
+                <div class="mirada-gracias">
+
+                    Gracias por mirarme así.
+
+                    <br><br>
+
+                    Gracias por hacerme sentir
+                    tan querido, tan especial
+                    y tan yo.
+
+                </div>
+
+
+                <div class="mirada-final">
+
+                    Siento que nadie me miró
+                    como lo haces tú. ❤️
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="boton-mirada"
+                onclick="irALoQueProvocaste()"
+            >
+                Continuar ❤️
             </button>
 
 
@@ -1571,35 +1322,24 @@
 
         function abrirHistoria() {
 
-
             const portada =
                 document.getElementById("portada");
-
 
             const iquitos =
                 document.getElementById("iquitos");
 
-
             portada.style.opacity = "0";
-
 
             setTimeout(function() {
 
-
                 portada.style.display = "none";
-
 
                 iquitos.style.display = "flex";
 
-
                 window.scrollTo({
-
                     top: 0,
-
                     behavior: "smooth"
-
                 });
-
 
             }, 1500);
 
@@ -1613,21 +1353,15 @@
 
         function irALima() {
 
-
             document.getElementById("iquitos")
                 .style.display = "none";
-
 
             document.getElementById("lima")
                 .style.display = "flex";
 
-
             window.scrollTo({
-
                 top: 0,
-
                 behavior: "smooth"
-
             });
 
         }
@@ -1640,21 +1374,15 @@
 
         function irAMomentos() {
 
-
             document.getElementById("lima")
                 .style.display = "none";
-
 
             document.getElementById("momentos")
                 .style.display = "flex";
 
-
             window.scrollTo({
-
                 top: 0,
-
                 behavior: "smooth"
-
             });
 
         }
@@ -1667,21 +1395,15 @@
 
         function irACarro() {
 
-
             document.getElementById("momentos")
                 .style.display = "none";
-
 
             document.getElementById("carro")
                 .style.display = "flex";
 
-
             window.scrollTo({
-
                 top: 0,
-
                 behavior: "smooth"
-
             });
 
         }
@@ -1690,14 +1412,34 @@
 
         /* =====================================
            CARRO → MIRADA
-           TEMPORAL
         ===================================== */
 
         function irAMirada() {
 
+            document.getElementById("carro")
+                .style.display = "none";
+
+            document.getElementById("mirada")
+                .style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =====================================
+           MIRADA → SIGUIENTE ESCENA
+           TEMPORAL
+        ===================================== */
+
+        function irALoQueProvocaste() {
 
             alert(
-                "Hay algo de ti que nunca voy a olvidar... ❤️"
+                "Y entonces apareciste tú... ❤️"
             );
 
         }

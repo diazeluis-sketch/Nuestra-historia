@@ -10,6 +10,10 @@
 
 <style>
 
+/* =====================================================
+   BASE
+===================================================== */
+
 *{
     box-sizing:border-box;
 }
@@ -44,9 +48,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    BOTONES
-========================= */
+===================================================== */
 
 button{
     padding:15px 32px;
@@ -58,7 +62,8 @@ button{
     font-size:17px;
     cursor:pointer;
     box-shadow:0 5px 20px rgba(70,50,50,.15);
-    transition:.3s;
+    transition:transform .3s ease,
+               background .3s ease;
 }
 
 button:hover{
@@ -66,12 +71,17 @@ button:hover{
 }
 
 
-/* =========================
+/* =====================================================
    PORTADA
-========================= */
+===================================================== */
 
 #portada{
-    background:linear-gradient(135deg,#f8eef0,#f3dfe4);
+    background:linear-gradient(
+        135deg,
+        #f8eef0,
+        #f3dfe4
+    );
+
     color:#4a3035;
     transition:opacity 1.5s ease;
 }
@@ -95,19 +105,52 @@ h1{
 }
 
 
-/* =========================
-   GENERAL
-========================= */
+/* =====================================================
+   IQUITOS
+===================================================== */
 
-.intro,
-.carro-intro,
-.mirada-intro{
+#iquitos{
+    display:none;
+    flex-direction:column;
+}
+
+.intro{
     max-width:600px;
     font-size:25px;
     line-height:1.8;
     margin:0 auto 50px;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
+}
+
+.intro strong{
+    font-weight:normal;
+}
+
+.fecha{
+    font-size:15px;
+    letter-spacing:6px;
+    color:#756565;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:1s;
+
+    margin-bottom:12px;
+}
+
+.lugar{
+    font-size:48px;
+    letter-spacing:9px;
+    margin-bottom:40px;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:1.5s;
 }
 
 .foto{
@@ -116,7 +159,10 @@ h1{
     margin:25px auto;
     overflow:hidden;
     border-radius:6px;
-    box-shadow:0 15px 40px rgba(70,50,50,.18);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,50,.18);
+
     opacity:0;
 }
 
@@ -124,55 +170,6 @@ h1{
     display:block;
     width:100%;
     height:auto;
-}
-
-.texto-final{
-    max-width:580px;
-    font-size:20px;
-    line-height:1.9;
-    margin:45px auto 0;
-}
-
-.continuar{
-    margin-top:50px;
-    margin-bottom:40px;
-    background:transparent;
-    color:#8b4a5a;
-    border:1px solid rgba(139,74,90,.45);
-}
-
-.continuar:hover{
-    background:#8b4a5a;
-    color:white;
-}
-
-
-/* =========================
-   IQUITOS
-========================= */
-
-#iquitos{
-    display:none;
-    flex-direction:column;
-}
-
-.fecha{
-    font-size:15px;
-    letter-spacing:6px;
-    color:#756565;
-    margin-bottom:12px;
-    opacity:0;
-    animation:aparecer 2s ease forwards;
-    animation-delay:1s;
-}
-
-.lugar{
-    font-size:48px;
-    letter-spacing:9px;
-    margin-bottom:40px;
-    opacity:0;
-    animation:aparecer 2s ease forwards;
-    animation-delay:1.5s;
 }
 
 .foto-1{
@@ -186,7 +183,13 @@ h1{
 }
 
 .texto-final{
+    max-width:580px;
+    font-size:20px;
+    line-height:1.9;
+    margin:45px auto 0;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
     animation-delay:6s;
 }
@@ -197,10 +200,30 @@ h1{
     color:#8b4a5a;
 }
 
+.continuar{
+    margin-top:50px;
+    margin-bottom:40px;
 
-/* =========================
+    background:transparent;
+    color:#8b4a5a;
+
+    border:1px solid rgba(139,74,90,.45);
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:7.5s;
+}
+
+.continuar:hover{
+    background:#8b4a5a;
+    color:white;
+}
+
+
+/* =====================================================
    PERO NO
-========================= */
+===================================================== */
 
 #lima{
     display:none;
@@ -213,7 +236,9 @@ h1{
 .frase-lima{
     font-size:25px;
     line-height:1.8;
+
     opacity:0;
+
     animation:aparecer 2.5s ease forwards;
 }
 
@@ -221,7 +246,9 @@ h1{
     font-size:42px;
     margin-top:60px;
     color:#8b4a5a;
+
     opacity:0;
+
     animation:aparecer 2.5s ease forwards;
     animation-delay:3s;
 }
@@ -230,22 +257,26 @@ h1{
     font-size:22px;
     line-height:1.8;
     margin-top:55px;
+
     opacity:0;
+
     animation:aparecer 2.5s ease forwards;
     animation-delay:5s;
 }
 
 .boton-lima{
     margin-top:60px;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
     animation-delay:7s;
 }
 
 
-/* =========================
+/* =====================================================
    MOMENTOS
-========================= */
+===================================================== */
 
 #momentos{
     display:none;
@@ -260,8 +291,22 @@ h1{
 
 .momento{
     margin-bottom:80px;
+
     opacity:0;
+
     animation:aparecer 1.8s ease forwards;
+}
+
+.momento:nth-child(2){
+    animation-delay:.8s;
+}
+
+.momento:nth-child(3){
+    animation-delay:1.8s;
+}
+
+.momento:nth-child(4){
+    animation-delay:2.8s;
 }
 
 .momento img{
@@ -270,7 +315,9 @@ h1{
     display:block;
     margin:auto;
     border-radius:5px;
-    box-shadow:0 15px 40px rgba(70,50,50,.18);
+
+    box-shadow:
+        0 15px 40px rgba(70,50,50,.18);
 }
 
 .momento-titulo{
@@ -294,13 +341,24 @@ h1{
     margin:20px auto 60px;
 }
 
+.boton-momentos{
+    margin-top:10px;
+}
 
-/* =========================
+
+/* =====================================================
    CARRO
-========================= */
+===================================================== */
 
 #carro{
     display:none;
+}
+
+.carro-intro{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 55px;
 }
 
 .foto-principal{
@@ -309,8 +367,12 @@ h1{
     margin:0 auto 50px;
     overflow:hidden;
     border-radius:6px;
-    box-shadow:0 20px 55px rgba(70,50,50,.22);
+
+    box-shadow:
+        0 20px 55px rgba(70,50,50,.22);
+
     opacity:0;
+
     animation:fotoGrande 2.5s ease forwards;
     animation-delay:1.5s;
 }
@@ -318,14 +380,18 @@ h1{
 .foto-principal img{
     display:block;
     width:100%;
+    height:auto;
 }
 
 .frase-carro{
     max-width:580px;
     margin:0 auto 60px;
+
     font-size:24px;
     line-height:2.2;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
     animation-delay:3.5s;
 }
@@ -335,7 +401,9 @@ h1{
     line-height:1.8;
     max-width:580px;
     margin:0 auto 60px;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
     animation-delay:5.5s;
 }
@@ -356,7 +424,9 @@ h1{
 
 .foto-secundaria{
     width:50%;
+
     opacity:0;
+
     animation:aparecer 2s ease forwards;
 }
 
@@ -372,7 +442,9 @@ h1{
     display:block;
     width:100%;
     border-radius:5px;
-    box-shadow:0 12px 35px rgba(70,50,50,.16);
+
+    box-shadow:
+        0 12px 35px rgba(70,50,50,.16);
 }
 
 .boton-carro{
@@ -380,16 +452,19 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    TU MIRADA
-========================= */
+===================================================== */
 
 #mirada{
     display:none;
 }
 
 .mirada-intro{
+    max-width:600px;
     font-size:27px;
+    line-height:1.8;
+    margin:0 auto 55px;
 }
 
 .mirada-foto{
@@ -398,8 +473,12 @@ h1{
     margin:0 auto 55px;
     overflow:hidden;
     border-radius:6px;
-    box-shadow:0 20px 55px rgba(70,50,50,.22);
+
+    box-shadow:
+        0 20px 55px rgba(70,50,50,.22);
+
     opacity:0;
+
     animation:fotoGrande 2.5s ease forwards;
     animation-delay:1.5s;
 }
@@ -407,11 +486,13 @@ h1{
 .mirada-foto img{
     display:block;
     width:100%;
+    height:auto;
 }
 
 .mirada-texto{
     max-width:600px;
     margin:auto;
+
     font-size:21px;
     line-height:1.9;
 }
@@ -441,9 +522,9 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    LO QUE PROVOCASTE
-========================= */
+===================================================== */
 
 #provocaste{
     display:none;
@@ -453,7 +534,7 @@ h1{
     max-width:620px;
     font-size:27px;
     line-height:1.9;
-    margin-bottom:55px;
+    margin:0 auto 55px;
 }
 
 .provocaste-texto{
@@ -483,9 +564,9 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    NUESTRA CANCIÓN
-========================= */
+===================================================== */
 
 #cancion{
     display:none;
@@ -515,6 +596,7 @@ h1{
 .cancion-mensaje{
     max-width:580px;
     margin:0 auto 40px;
+
     font-size:21px;
     line-height:1.9;
 }
@@ -523,8 +605,10 @@ h1{
     width:100%;
     max-width:500px;
     height:152px;
+
     border:0;
     border-radius:12px;
+
     margin:20px auto 35px;
     display:block;
 }
@@ -542,9 +626,9 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    CARTA
-========================= */
+===================================================== */
 
 #carta{
     display:none;
@@ -554,16 +638,79 @@ h1{
     max-width:620px;
     margin:auto;
     text-align:left;
+
     font-size:20px;
     line-height:2;
 }
 
 .carta-saludo{
     text-align:center;
+
     font-size:28px;
     color:#8b4a5a;
-    margin-bottom:40px;
+
+    margin-bottom:35px;
 }
+
+
+/* NUEVA CANCIÓN */
+
+.carta-cancion{
+    text-align:center;
+
+    padding:30px 15px 35px;
+    margin:0 auto 45px;
+
+    border-top:1px solid rgba(139,74,90,.18);
+    border-bottom:1px solid rgba(139,74,90,.18);
+}
+
+.carta-cancion-titulo{
+    font-size:14px;
+    letter-spacing:4px;
+
+    color:#8b4a5a;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.carta-cancion-nombre{
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.carta-cancion-artista{
+    font-size:17px;
+    color:#756565;
+
+    margin-bottom:25px;
+}
+
+.spotify-carta{
+    width:100%;
+    max-width:500px;
+
+    height:152px;
+
+    border:0;
+    border-radius:12px;
+
+    display:block;
+    margin:0 auto 20px;
+}
+
+.carta-cancion-frase{
+    font-size:16px;
+    line-height:1.7;
+
+    color:#756565;
+
+    max-width:500px;
+    margin:auto;
+}
+
 
 .carta p{
     margin-bottom:28px;
@@ -572,6 +719,7 @@ h1{
 .carta-firma{
     text-align:right;
     margin-top:45px;
+
     font-size:23px;
     color:#8b4a5a;
 }
@@ -581,9 +729,9 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    FUTURO
-========================= */
+===================================================== */
 
 #futuro{
     display:none;
@@ -605,12 +753,14 @@ h1{
 
 .futuro-lista{
     margin:45px 0;
+
     font-size:22px;
     line-height:2.3;
 }
 
 .futuro-final{
     margin-top:55px;
+
     font-size:25px;
     color:#8b4a5a;
 }
@@ -620,30 +770,39 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    FINAL
-========================= */
+===================================================== */
 
 #final{
     display:none;
-    background:linear-gradient(135deg,#f8eef0,#f3dfe4);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8eef0,
+            #f3dfe4
+        );
 }
 
 .final-corazon{
     font-size:58px;
     margin-bottom:25px;
+
     animation:latido 1.8s infinite;
 }
 
 .final-titulo{
     font-size:34px;
     font-weight:normal;
+
     margin-bottom:40px;
 }
 
 .final-texto{
     max-width:600px;
     margin:auto;
+
     font-size:22px;
     line-height:2;
 }
@@ -651,6 +810,7 @@ h1{
 .final-desayuno{
     font-size:27px;
     color:#8b4a5a;
+
     margin:45px 0;
 }
 
@@ -661,8 +821,10 @@ h1{
 
 .final-fecha{
     margin-top:60px;
+
     font-size:15px;
     letter-spacing:4px;
+
     color:#756565;
 }
 
@@ -674,13 +836,14 @@ h1{
 .final-amor{
     font-size:32px;
     color:#8b4a5a;
+
     margin-top:30px;
 }
 
 
-/* =========================
+/* =====================================================
    ANIMACIONES
-========================= */
+===================================================== */
 
 @keyframes aparecer{
 
@@ -737,9 +900,9 @@ h1{
 }
 
 
-/* =========================
+/* =====================================================
    CELULAR
-========================= */
+===================================================== */
 
 @media(max-width:600px){
 
@@ -858,6 +1021,10 @@ h1{
         font-size:25px;
     }
 
+    .carta-cancion-nombre{
+        font-size:24px;
+    }
+
     .futuro-intro{
         font-size:24px;
     }
@@ -888,19 +1055,6 @@ h1{
 
 }
 
-
-/* =========================
-   SECCIONES OCULTAS
-========================= */
-
-#provocaste,
-#cancion,
-#carta,
-#futuro,
-#final{
-    flex-direction:column;
-}
-
 </style>
 
 </head>
@@ -917,7 +1071,9 @@ h1{
 
 <div class="contenedor">
 
-<div class="corazon">❤️</div>
+<div class="corazon">
+❤️
+</div>
 
 <h1>
 Hola, mi amor Melissa
@@ -975,14 +1131,16 @@ IQUITOS
 
 <div class="foto foto-1">
 
-<img src="iquitos-01.jpg"
+<img
+src="iquitos-01.jpg"
 alt="Nuestro primer día en Iquitos">
 
 </div>
 
 <div class="foto foto-2">
 
-<img src="iquitos-02.jpg"
+<img
+src="iquitos-02.jpg"
 alt="Nuestro primer día en Iquitos">
 
 </div>
@@ -1096,7 +1254,8 @@ cualquier excusa para vernos.
 Un lugar
 </div>
 
-<img src="7tapas.jpg"
+<img
+src="7tapas.jpg"
 alt="Una salida juntos">
 
 <div class="momento-texto">
@@ -1112,7 +1271,8 @@ Una salida.
 Otra salida
 </div>
 
-<img src="celeste-01.jpg"
+<img
+src="celeste-01.jpg"
 alt="Una salida juntos">
 
 <div class="momento-texto">
@@ -1130,7 +1290,8 @@ Otro momento juntos.
 
 <div class="momento">
 
-<img src="celeste-02.jpg"
+<img
+src="celeste-02.jpg"
 alt="Un momento juntos">
 
 </div>
@@ -1142,7 +1303,8 @@ alt="Un momento juntos">
 Antes del trabajo
 </div>
 
-<img src="desayuno.jpg"
+<img
+src="desayuno.jpg"
 alt="Desayuno juntos">
 
 <div class="momento-texto">
@@ -1204,7 +1366,8 @@ se sienten diferentes.
 
 <div class="foto-principal">
 
-<img src="carro-01.jpg"
+<img
+src="carro-01.jpg"
 alt="Un momento juntos en el carro">
 
 </div>
@@ -1248,14 +1411,16 @@ con una sola mano por ti. 😂❤️
 
 <div class="foto-secundaria">
 
-<img src="carro-02.jpg"
+<img
+src="carro-02.jpg"
 alt="Otro momento juntos">
 
 </div>
 
 <div class="foto-secundaria">
 
-<img src="carro-03.jpg"
+<img
+src="carro-03.jpg"
 alt="Otro momento juntos">
 
 </div>
@@ -1299,7 +1464,8 @@ La forma en que me miras.
 
 <div class="mirada-foto">
 
-<img src="mirada.jpg"
+<img
+src="mirada.jpg"
 alt="Un momento juntos">
 
 </div>
@@ -1478,6 +1644,8 @@ Y, sobre todo,
 volví a sentir
 que alguien me quiere.
 
+<br>
+
 ❤️
 
 </div>
@@ -1515,16 +1683,12 @@ Nuestra canción
 
 
 <div class="cancion-nombre">
-
 Antes que el tiempo se vaya
-
 </div>
 
 
 <div class="cancion-artistas">
-
 Fonseca & Juanes
-
 </div>
 
 
@@ -1586,6 +1750,54 @@ Continuar ❤️
 <div class="carta-saludo">
 
 Para ti, Melissa ❤️
+
+</div>
+
+
+<!-- ==========================================
+     SEGUNDA CANCIÓN
+========================================== -->
+
+<div class="carta-cancion">
+
+<div class="carta-cancion-titulo">
+
+Antes de seguir leyendo...
+
+</div>
+
+<div class="carta-cancion-nombre">
+
+Te conocí
+
+</div>
+
+<div class="carta-cancion-artista">
+
+Zenar & Dario Coiro
+
+</div>
+
+
+<iframe
+class="spotify-carta"
+src="https://open.spotify.com/embed/search/Te%20conoc%C3%AD%20Zenar%20Dario%20Coiro"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
+
+
+<div class="carta-cancion-frase">
+
+Esta canción me hizo pensar
+en nosotros desde que la escuché.
+
+<br><br>
+
+Porque hay personas que llegan
+y cambian el aire.
+
+</div>
 
 </div>
 
@@ -1805,6 +2017,8 @@ sea simplemente nuestra vida.
 
 Y quiero vivirla contigo.
 
+<br>
+
 ❤️
 
 </div>
@@ -1868,6 +2082,7 @@ una de tus largas duchas...
 
 yo me encargo del desayuno.
 
+
 <div class="final-broma">
 
 Mucha confianzita, Luis Díaz. 😂
@@ -1907,7 +2122,11 @@ Te amo. ❤️
 <script>
 
 
-function mostrar(ocultar,mostrar){
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
+
+function mostrar(ocultar, mostrar){
 
     document.getElementById(ocultar)
         .style.display="none";
@@ -1923,13 +2142,17 @@ function mostrar(ocultar,mostrar){
 }
 
 
-/* PORTADA */
+/* =====================================================
+   PORTADA
+===================================================== */
 
 function abrirHistoria(){
 
-    const portada=document.getElementById("portada");
+    const portada =
+        document.getElementById("portada");
 
-    const iquitos=document.getElementById("iquitos");
+    const iquitos =
+        document.getElementById("iquitos");
 
     portada.style.opacity="0";
 
@@ -1949,71 +2172,47 @@ function abrirHistoria(){
 }
 
 
-/* IQUITOS */
+/* =====================================================
+   SECUENCIA
+===================================================== */
 
 function irALima(){
     mostrar("iquitos","lima");
 }
 
-
-/* PERO NO */
-
 function irAMomentos(){
     mostrar("lima","momentos");
 }
-
-
-/* MOMENTOS */
 
 function irACarro(){
     mostrar("momentos","carro");
 }
 
-
-/* CARRO */
-
 function irAMirada(){
     mostrar("carro","mirada");
 }
-
-
-/* MIRADA */
 
 function irAProvocaste(){
     mostrar("mirada","provocaste");
 }
 
-
-/* PROVOCASTE */
-
 function irACancion(){
     mostrar("provocaste","cancion");
 }
-
-
-/* CANCIÓN */
 
 function irACarta(){
     mostrar("cancion","carta");
 }
 
-
-/* CARTA */
-
 function irAFuturo(){
     mostrar("carta","futuro");
 }
-
-
-/* FUTURO */
 
 function irAFinal(){
     mostrar("futuro","final");
 }
 
-
 </script>
-
 
 </body>
 

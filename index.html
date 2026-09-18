@@ -8,29 +8,39 @@
 
     <title>Para Melissa ❤️</title>
 
+
     <style>
+
 
         * {
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             margin: 0;
             padding: 0;
+
             background: #F7F1EC;
+
             color: #3D3030;
+
             font-family: Georgia, serif;
+
             overflow-x: hidden;
+
         }
 
 
-        /* =================================
+        /* =====================================
            ESCENAS
-        ================================= */
+        ===================================== */
 
         .escena {
 
@@ -51,9 +61,10 @@
         }
 
 
-        /* =================================
+
+        /* =====================================
            PORTADA
-        ================================= */
+        ===================================== */
 
         #portada {
 
@@ -140,7 +151,7 @@
 
             transition:
                 transform 0.3s ease,
-                opacity 0.3s ease;
+                background 0.3s ease;
 
         }
 
@@ -153,9 +164,10 @@
         }
 
 
-        /* =================================
-           IQUITOS
-        ================================= */
+
+        /* =====================================
+           ESCENA IQUITOS
+        ===================================== */
 
         #iquitos {
 
@@ -171,10 +183,6 @@
 
         }
 
-
-        /* =================================
-           INTRO
-        ================================= */
 
         .intro {
 
@@ -201,10 +209,6 @@
         }
 
 
-        /* =================================
-           FECHA
-        ================================= */
-
         .fecha {
 
             font-size: 15px;
@@ -224,10 +228,6 @@
 
         }
 
-
-        /* =================================
-           LUGAR
-        ================================= */
 
         .lugar {
 
@@ -249,9 +249,9 @@
         }
 
 
-        /* =================================
+        /* =====================================
            FOTOGRAFÍAS
-        ================================= */
+        ===================================== */
 
         .foto {
 
@@ -291,14 +291,6 @@
         }
 
 
-        .foto:hover img {
-
-            transform:
-                scale(1.08);
-
-        }
-
-
         .foto-1 {
 
             animation:
@@ -319,9 +311,10 @@
         }
 
 
-        /* =================================
-           TEXTO FINAL
-        ================================= */
+
+        /* =====================================
+           TEXTO IQUITOS
+        ===================================== */
 
         .texto-final {
 
@@ -359,10 +352,6 @@
         }
 
 
-        /* =================================
-           BOTÓN CONTINUAR
-        ================================= */
-
         .continuar {
 
             margin-top: 50px;
@@ -395,9 +384,103 @@
         }
 
 
-        /* =================================
+
+        /* =====================================
+           ESCENA "PERO NO"
+        ===================================== */
+
+        #lima {
+
+            display: none;
+
+            min-height: 100vh;
+
+            background: #F7F1EC;
+
+            color: #3D3030;
+
+            flex-direction: column;
+
+        }
+
+
+        .lima-texto {
+
+            max-width: 650px;
+
+            margin: auto;
+
+        }
+
+
+        .frase-lima {
+
+            font-size: 25px;
+
+            line-height: 1.8;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2.5s ease forwards;
+
+        }
+
+
+        .frase-lima-2 {
+
+            font-size: 42px;
+
+            margin-top: 60px;
+
+            color: #8b4a5a;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2.5s ease forwards;
+
+            animation-delay: 3s;
+
+        }
+
+
+        .frase-lima-3 {
+
+            font-size: 22px;
+
+            line-height: 1.8;
+
+            margin-top: 55px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2.5s ease forwards;
+
+            animation-delay: 5s;
+
+        }
+
+
+        .boton-lima {
+
+            margin-top: 60px;
+
+            opacity: 0;
+
+            animation:
+                aparecer 2s ease forwards;
+
+            animation-delay: 7s;
+
+        }
+
+
+
+        /* =====================================
            ANIMACIONES
-        ================================= */
+        ===================================== */
 
         @keyframes aparecer {
 
@@ -464,11 +547,13 @@
         }
 
 
-        /* =================================
+
+        /* =====================================
            CELULAR
-        ================================= */
+        ===================================== */
 
         @media (max-width: 600px) {
+
 
             .escena {
 
@@ -533,10 +618,23 @@
             }
 
 
-            .foto {
+            .frase-lima {
 
-                margin:
-                    18px auto;
+                font-size: 21px;
+
+            }
+
+
+            .frase-lima-2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .frase-lima-3 {
+
+                font-size: 19px;
 
             }
 
@@ -550,9 +648,10 @@
 <body>
 
 
-    <!-- =================================
+
+    <!-- =====================================
          ESCENA 1 — PORTADA
-    ================================= -->
+    ===================================== -->
 
     <section
         id="portada"
@@ -603,9 +702,9 @@
 
 
 
-    <!-- =================================
+    <!-- =====================================
          ESCENA 2 — IQUITOS
-    ================================= -->
+    ===================================== -->
 
     <section
         id="iquitos"
@@ -645,9 +744,6 @@
             </div>
 
 
-
-            <!-- FOTO 1 -->
-
             <div class="foto foto-1">
 
                 <img
@@ -658,9 +754,6 @@
             </div>
 
 
-
-            <!-- FOTO 2 -->
-
             <div class="foto foto-2">
 
                 <img
@@ -670,9 +763,6 @@
 
             </div>
 
-
-
-            <!-- TEXTO -->
 
             <div class="texto-final">
 
@@ -700,10 +790,9 @@
             </div>
 
 
-
             <button
                 class="continuar"
-                onclick="siguienteEscena()"
+                onclick="irALima()"
             >
 
                 Continuar
@@ -717,17 +806,79 @@
 
 
 
+    <!-- =====================================
+         ESCENA 3 — LIMA / PERO NO
+    ===================================== -->
+
+    <section
+        id="lima"
+        class="escena"
+    >
+
+        <div class="contenedor">
+
+
+            <div class="lima-texto">
+
+
+                <div class="frase-lima">
+
+                    Pensamos que lo que pasó
+                    en Iquitos se quedaba en Iquitos.
+
+                </div>
+
+
+                <div class="frase-lima-2">
+
+                    Pero no.
+
+                </div>
+
+
+                <div class="frase-lima-3">
+
+                    Volvimos a buscarnos.
+
+                    <br><br>
+
+                    Y aquella bonita conexión
+                    comenzó a convertirse en algo más.
+
+                </div>
+
+
+                <button
+                    class="boton-lima"
+                    onclick="alert('Aquí comienzan nuestros momentos en Lima ❤️')"
+                >
+
+                    Continuar →
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <script>
 
 
-        /* =================================
+        /* =====================================
            ABRIR HISTORIA
-        ================================= */
+        ===================================== */
 
         function abrirHistoria() {
 
+
             const portada =
                 document.getElementById("portada");
+
 
             const iquitos =
                 document.getElementById("iquitos");
@@ -738,9 +889,12 @@
 
             setTimeout(function() {
 
+
                 portada.style.display = "none";
 
+
                 iquitos.style.display = "flex";
+
 
                 window.scrollTo({
 
@@ -750,21 +904,41 @@
 
                 });
 
+
             }, 1500);
 
         }
 
 
 
-        /* =================================
-           TEMPORAL
-        ================================= */
+        /* =====================================
+           IR A LIMA
+        ===================================== */
 
-        function siguienteEscena() {
+        function irALima() {
 
-            alert(
-                "Aquí comienza nuestra historia en Lima ❤️"
-            );
+
+            const iquitos =
+                document.getElementById("iquitos");
+
+
+            const lima =
+                document.getElementById("lima");
+
+
+            iquitos.style.display = "none";
+
+
+            lima.style.display = "flex";
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
 
         }
 

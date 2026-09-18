@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,52 @@
 <title>Para Melissa ❤️</title>
 
 <style>
+
     * {
         box-sizing: border-box;
     }
 
-    body {
+    html, body {
         margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background: #111;
+        font-family: Georgia, serif;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    /* =========================
+       ESCENAS
+    ========================= */
+
+    .escena {
         min-height: 100vh;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(135deg, #f8eef0, #f3dfe4);
-        font-family: Georgia, serif;
-        color: #4a3035;
         text-align: center;
+        padding: 40px 25px;
+    }
+
+    /* =========================
+       PORTADA
+    ========================= */
+
+    #portada {
+        background: linear-gradient(135deg, #f8eef0, #f3dfe4);
+        color: #4a3035;
+        transition: opacity 1.2s ease;
     }
 
     .contenedor {
         width: 90%;
         max-width: 520px;
-        padding: 45px 25px;
     }
 
     .corazon {
@@ -58,7 +85,7 @@
         font-family: Georgia, serif;
         font-size: 17px;
         cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         transition: transform 0.2s;
     }
 
@@ -66,7 +93,93 @@
         transform: scale(1.04);
     }
 
+    /* =========================
+       ESCENA IQUITOS
+    ========================= */
+
+    #iquitos {
+        display: none;
+        position: relative;
+        flex-direction: column;
+        background: #111;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .texto-intro {
+        max-width: 600px;
+        font-size: 24px;
+        line-height: 1.7;
+        margin-bottom: 45px;
+        animation: aparecer 2s ease forwards;
+    }
+
+    .fecha {
+        font-size: 16px;
+        letter-spacing: 5px;
+        margin-top: 25px;
+        opacity: 0.75;
+    }
+
+    .lugar {
+        font-size: 48px;
+        letter-spacing: 7px;
+        margin-top: 12px;
+    }
+
+    .foto {
+        width: 100%;
+        max-width: 650px;
+        margin: 30px auto;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    }
+
+    .foto img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-final {
+        max-width: 600px;
+        font-size: 20px;
+        line-height: 1.8;
+        margin-top: 25px;
+    }
+
+    .conexion {
+        font-size: 27px;
+        margin-top: 20px;
+    }
+
+    .continuar {
+        margin-top: 45px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+
+    @keyframes aparecer {
+
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
     @keyframes latido {
+
         0%, 100% {
             transform: scale(1);
         }
@@ -74,7 +187,9 @@
         50% {
             transform: scale(1.12);
         }
+
     }
+
 </style>
 ```
 
@@ -83,31 +198,157 @@
 <body>
 
 ```
-<div class="contenedor">
+<!-- =========================
+     PORTADA
+========================= -->
 
-    <div class="corazon">❤️</div>
+<section id="portada" class="escena">
 
-    <h1>Hola, mi amor Melissa</h1>
+    <div class="contenedor">
 
-    <div class="mensaje">
-        Hice esto pensando en ti.
-        <br><br>
-        Hay una pequeña historia que quiero recordarte...
+        <div class="corazon">
+            ❤️
+        </div>
+
+        <h1>
+            Hola, mi amor Melissa
+        </h1>
+
+        <div class="mensaje">
+
+            Hice esto pensando en ti.
+
+            <br><br>
+
+            Hay una pequeña historia que quiero recordarte...
+
+        </div>
+
+        <button onclick="abrirHistoria()">
+            Abrir nuestra historia ❤️
+        </button>
+
     </div>
 
-    <button onclick="abrirHistoria()">
-        Abrir nuestra historia ❤️
-    </button>
+</section>
 
-</div>
+
+
+<!-- =========================
+     IQUITOS
+========================= -->
+
+<section id="iquitos" class="escena">
+
+    <div class="contenedor">
+
+        <div class="texto-intro">
+
+            Quién iba a pensar que un viaje...
+
+            <br><br>
+
+            <strong>
+                nos llevaría a descubrir una bonita conexión.
+            </strong>
+
+        </div>
+
+
+        <div class="fecha">
+            12 · 07 · 2026
+        </div>
+
+        <div class="lugar">
+            IQUITOS
+        </div>
+
+
+        <!-- FOTO 1 -->
+
+        <div class="foto">
+
+            <img src="fotos/iquitos-01.jpg" alt="Nuestro primer día en Iquitos">
+
+        </div>
+
+
+        <!-- FOTO 2 -->
+
+        <div class="foto">
+
+            <img src="fotos/iquitos-02.jpg" alt="Nuestro primer día en Iquitos">
+
+        </div>
+
+
+        <div class="texto-final">
+
+            Unos días para conocernos.
+            <br>
+            Unos días para compartir.
+            <br>
+            Unos días para descubrir algo que ninguno de los dos esperaba.
+
+            <div class="conexion">
+
+                Una bonita conexión. ❤️
+
+            </div>
+
+            <br>
+
+            Y un beso antes de volver a Lima.
+
+        </div>
+
+
+        <button class="continuar" onclick="siguienteEscena()">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</section>
+
+
 
 <script>
+
     function abrirHistoria() {
-        alert("Y pensar que todo comenzó en Iquitos... ❤️");
+
+        const portada = document.getElementById("portada");
+        const iquitos = document.getElementById("iquitos");
+
+        portada.style.opacity = "0";
+
+        setTimeout(function() {
+
+            portada.style.display = "none";
+
+            iquitos.style.display = "flex";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }, 1200);
+
     }
+
+
+    function siguienteEscena() {
+
+        alert("Aquí comienza nuestra historia en Lima ❤️");
+
+    }
+
 </script>
 ```
 
 </body>
-</html>
 
+</html>

@@ -1,1396 +1,2230 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f1ec">
-  <meta name="description" content="Nuestra historia ❤️">
 
-  <title>Nuestra historia ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Melissa ❤️</title>
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:#F7F1EC;
+    color:#3D3030;
+    font-family:Georgia,serif;
+    overflow-x:hidden;
+}
+
+.escena{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contenedor{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+button{
+    padding:15px 32px;
+    border:none;
+    border-radius:30px;
+    background:#8b4a5a;
+    color:white;
+    font-family:Georgia,serif;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(70,50,50,.15);
+    transition:transform .3s ease,
+               background .3s ease;
+}
+
+button:hover{
+    transform:scale(1.04);
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+#portada{
+    background:linear-gradient(
+        135deg,
+        #f8eef0,
+        #f3dfe4
+    );
+
+    color:#4a3035;
+    transition:opacity 1.5s ease;
+}
+
+.corazon{
+    font-size:58px;
+    margin-bottom:25px;
+    animation:latido 1.8s infinite;
+}
+
+h1{
+    font-size:34px;
+    font-weight:normal;
+    margin:0 0 22px;
+}
+
+.mensaje{
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* =====================================================
+   IQUITOS
+===================================================== */
 
-    html {
-      scroll-behavior: smooth;
-    }
+#iquitos{
+    display:none;
+    flex-direction:column;
+}
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f1ec;
-      color: #3d3030;
-      line-height: 1.75;
-      overflow-x: hidden;
-    }
+.intro{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 50px;
 
-    button {
-      font-family: inherit;
-    }
+    opacity:0;
 
-    .page {
-      width: 100%;
-      min-height: 100vh;
-    }
+    animation:aparecer 2s ease forwards;
+}
 
-    /* =========================
-       SECCIONES
-    ========================= */
+.intro strong{
+    font-weight:normal;
+}
 
-    .section {
-      display: none;
-      min-height: 100vh;
-      padding: 55px 22px 70px;
-      opacity: 0;
-      animation: fadeIn 1.2s ease forwards;
-    }
+.fecha{
+    font-size:15px;
+    letter-spacing:6px;
+    color:#756565;
 
-    .section.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    opacity:0;
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
+    animation:aparecer 2s ease forwards;
+    animation-delay:1s;
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    margin-bottom:12px;
+}
 
-    .content {
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-    }
+.lugar{
+    font-size:48px;
+    letter-spacing:9px;
+    margin-bottom:40px;
 
-    /* =========================
-       PORTADA
-    ========================= */
+    opacity:0;
 
-    .cover {
-      position: relative;
-      justify-content: center;
-      text-align: center;
-      background:
-        radial-gradient(circle at 50% 35%, rgba(255,255,255,.75), transparent 42%),
-        linear-gradient(145deg, #f8eef0, #f3dfe4);
-      overflow: hidden;
-    }
+    animation:aparecer 2s ease forwards;
+    animation-delay:1.5s;
+}
 
-    .cover::before,
-    .cover::after {
-      content: "♡";
-      position: absolute;
-      color: rgba(139, 74, 90, .14);
-      font-size: 90px;
-      animation: floatHeart 5s ease-in-out infinite;
-    }
+.foto{
+    width:100%;
+    max-width:620px;
+    margin:25px auto;
+    overflow:hidden;
+    border-radius:6px;
 
-    .cover::before {
-      top: 12%;
-      left: 8%;
-    }
+    box-shadow:
+        0 15px 40px rgba(70,50,50,.18);
 
-    .cover::after {
-      right: 8%;
-      bottom: 15%;
-      font-size: 70px;
-      animation-delay: 1.5s;
-    }
+    opacity:0;
+}
 
-    @keyframes floatHeart {
-      0%, 100% {
-        transform: translateY(0) rotate(-8deg);
-      }
+.foto img{
+    display:block;
+    width:100%;
+    height:auto;
+}
 
-      50% {
-        transform: translateY(-14px) rotate(8deg);
-      }
-    }
+.foto-1{
+    animation:fotoEntrada 2s ease forwards;
+    animation-delay:2.5s;
+}
 
-    .cover-small {
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #8b4a5a;
-      margin-bottom: 18px;
-    }
+.foto-2{
+    animation:fotoEntrada 2s ease forwards;
+    animation-delay:4.5s;
+}
 
-    .cover h1 {
-      font-size: clamp(40px, 10vw, 68px);
-      line-height: 1.1;
-      font-weight: normal;
-      color: #3d3030;
-      margin-bottom: 22px;
-    }
+.texto-final{
+    max-width:580px;
+    font-size:20px;
+    line-height:1.9;
+    margin:45px auto 0;
 
-    .cover h1 span {
-      color: #8b4a5a;
-    }
+    opacity:0;
 
-    .cover-subtitle {
-      max-width: 540px;
-      margin: 0 auto 35px;
-      font-size: 18px;
-      color: #756565;
-    }
+    animation:aparecer 2s ease forwards;
+    animation-delay:6s;
+}
 
-    /* =========================
-       TITULOS
-    ========================= */
+.conexion{
+    font-size:28px;
+    margin:25px 0 20px;
+    color:#8b4a5a;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: clamp(32px, 8vw, 52px);
-      font-weight: normal;
-      color: #8b4a5a;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
+.continuar{
+    margin-top:50px;
+    margin-bottom:40px;
 
-    .section-subtitle {
-      text-align: center;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #9b8989;
-      margin-bottom: 35px;
-    }
+    background:transparent;
+    color:#8b4a5a;
 
-    .text-center {
-      text-align: center;
-    }
+    border:1px solid rgba(139,74,90,.45);
 
-    /* =========================
-       TEXTO
-    ========================= */
+    opacity:0;
 
-    .story-text {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 18px;
-    }
+    animation:aparecer 2s ease forwards;
+    animation-delay:7.5s;
+}
 
-    .story-text p {
-      margin-bottom: 24px;
-    }
+.continuar:hover{
+    background:#8b4a5a;
+    color:white;
+}
 
-    .story-text strong {
-      color: #8b4a5a;
-      font-weight: normal;
-    }
 
-    .quote {
-      text-align: center;
-      font-size: 26px;
-      font-style: italic;
-      color: #8b4a5a;
-      margin: 38px auto;
-      max-width: 620px;
-      line-height: 1.45;
-    }
+/* =====================================================
+   PERO NO
+===================================================== */
 
-    .date {
-      text-align: center;
-      letter-spacing: 4px;
-      font-size: 14px;
-      color: #8b4a5a;
-      margin: 15px 0 30px;
-    }
+#lima{
+    display:none;
+}
 
-    /* =========================
-       FOTOS
-    ========================= */
+.lima-texto{
+    max-width:650px;
+}
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 25px 0 35px;
-    }
+.frase-lima{
+    font-size:25px;
+    line-height:1.8;
 
-    .photo-grid img,
-    .single-photo img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(61, 48, 48, .13);
-    }
+    opacity:0;
 
-    .photo-grid img {
-      aspect-ratio: 1 / 1;
-    }
+    animation:aparecer 2.5s ease forwards;
+}
 
-    .single-photo {
-      max-width: 620px;
-      margin: 28px auto 38px;
-    }
+.frase-lima-2{
+    font-size:42px;
+    margin-top:60px;
+    color:#8b4a5a;
 
-    .single-photo img {
-      max-height: 720px;
-    }
+    opacity:0;
 
-    .photo-caption {
-      text-align: center;
-      color: #8b7777;
-      font-size: 14px;
-      margin-top: 10px;
-      font-style: italic;
-    }
+    animation:aparecer 2.5s ease forwards;
+    animation-delay:3s;
+}
 
-    /* =========================
-       DIVISORES
-    ========================= */
+.frase-lima-3{
+    font-size:22px;
+    line-height:1.8;
+    margin-top:55px;
 
-    .divider {
-      width: 70px;
-      height: 1px;
-      background: #c8a8ae;
-      margin: 35px auto;
-      position: relative;
-    }
+    opacity:0;
 
-    .divider::after {
-      content: "♥";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: #f7f1ec;
-      padding: 0 12px;
-      color: #8b4a5a;
-      font-size: 12px;
-    }
+    animation:aparecer 2.5s ease forwards;
+    animation-delay:5s;
+}
+
+.boton-lima{
+    margin-top:60px;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:7s;
+}
+
+
+/* =====================================================
+   MOMENTOS
+===================================================== */
+
+#momentos{
+    display:none;
+}
+
+.momentos-intro{
+    max-width:620px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 55px;
+}
+
+.momento{
+    margin-bottom:80px;
+
+    opacity:0;
+
+    animation:aparecer 1.8s ease forwards;
+}
+
+.momento:nth-child(2){
+    animation-delay:.8s;
+}
+
+.momento:nth-child(3){
+    animation-delay:1.8s;
+}
+
+.momento:nth-child(4){
+    animation-delay:2.8s;
+}
+
+.momento img{
+    width:100%;
+    max-width:620px;
+    display:block;
+    margin:auto;
+    border-radius:5px;
+
+    box-shadow:
+        0 15px 40px rgba(70,50,50,.18);
+}
+
+.momento-titulo{
+    font-size:14px;
+    letter-spacing:4px;
+    color:#8b4a5a;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.momento-texto{
+    font-size:20px;
+    line-height:1.8;
+    margin-top:25px;
+}
+
+.frase-momentos{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:20px auto 60px;
+}
+
+.boton-momentos{
+    margin-top:10px;
+}
+
+
+/* =====================================================
+   CARRO
+===================================================== */
+
+#carro{
+    display:none;
+}
+
+.carro-intro{
+    max-width:600px;
+    font-size:25px;
+    line-height:1.8;
+    margin:0 auto 55px;
+}
+
+.foto-principal{
+    width:100%;
+    max-width:680px;
+    margin:0 auto 50px;
+    overflow:hidden;
+    border-radius:6px;
+
+    box-shadow:
+        0 20px 55px rgba(70,50,50,.22);
+
+    opacity:0;
+
+    animation:fotoGrande 2.5s ease forwards;
+    animation-delay:1.5s;
+}
+
+.foto-principal img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.frase-carro{
+    max-width:580px;
+    margin:0 auto 60px;
+
+    font-size:24px;
+    line-height:2.2;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:3.5s;
+}
+
+.frase-mano{
+    font-size:21px;
+    line-height:1.8;
+    max-width:580px;
+    margin:0 auto 60px;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+    animation-delay:5.5s;
+}
+
+.broma-mano{
+    font-size:18px;
+    color:#8b4a5a;
+    margin-top:18px;
+}
+
+.fotos-secundarias{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    margin:30px auto 60px;
+    max-width:680px;
+}
+
+.foto-secundaria{
+    width:50%;
+
+    opacity:0;
+
+    animation:aparecer 2s ease forwards;
+}
+
+.foto-secundaria:first-child{
+    animation-delay:7s;
+}
+
+.foto-secundaria:last-child{
+    animation-delay:7.8s;
+}
+
+.foto-secundaria img{
+    display:block;
+    width:100%;
+    border-radius:5px;
+
+    box-shadow:
+        0 12px 35px rgba(70,50,50,.16);
+}
+
+.boton-carro{
+    margin-top:20px;
+}
+
+
+/* =====================================================
+   TU MIRADA
+===================================================== */
+
+#mirada{
+    display:none;
+}
+
+.mirada-intro{
+    max-width:600px;
+    font-size:27px;
+    line-height:1.8;
+    margin:0 auto 55px;
+}
+
+.mirada-foto{
+    width:100%;
+    max-width:680px;
+    margin:0 auto 55px;
+    overflow:hidden;
+    border-radius:6px;
+
+    box-shadow:
+        0 20px 55px rgba(70,50,50,.22);
+
+    opacity:0;
+
+    animation:fotoGrande 2.5s ease forwards;
+    animation-delay:1.5s;
+}
+
+.mirada-foto img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.mirada-texto{
+    max-width:600px;
+    margin:auto;
+
+    font-size:21px;
+    line-height:1.9;
+}
+
+.mirada-bloque{
+    margin-bottom:45px;
+}
+
+.mirada-especial{
+    font-size:27px;
+    color:#8b4a5a;
+    margin:25px 0;
+}
+
+.mirada-gracias{
+    margin-top:55px;
+}
+
+.mirada-final{
+    margin-top:35px;
+    font-size:25px;
+    color:#8b4a5a;
+}
+
+.boton-mirada{
+    margin-top:65px;
+}
+
+
+/* =====================================================
+   LO QUE PROVOCASTE
+===================================================== */
+
+#provocaste{
+    display:none;
+}
+
+.provocaste-intro{
+    max-width:620px;
+    font-size:27px;
+    line-height:1.9;
+    margin:0 auto 55px;
+}
+
+.provocaste-texto{
+    max-width:610px;
+    font-size:21px;
+    line-height:2;
+    margin:auto;
+}
+
+.provocaste-bloque{
+    margin-bottom:45px;
+}
+
+.provocaste-destacado{
+    color:#8b4a5a;
+    font-size:27px;
+    margin:25px 0;
+}
+
+.provocaste-final{
+    margin-top:55px;
+    font-size:25px;
+}
+
+.boton-provocaste{
+    margin-top:65px;
+}
+
+
+/* =====================================================
+   NUESTRA CANCIÓN
+===================================================== */
+
+#cancion{
+    display:none;
+}
+
+.cancion-titulo{
+    font-size:16px;
+    letter-spacing:5px;
+    color:#8b4a5a;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.cancion-nombre{
+    font-size:34px;
+    font-weight:normal;
+    line-height:1.4;
+    margin-bottom:10px;
+}
+
+.cancion-artistas{
+    font-size:19px;
+    color:#756565;
+    margin-bottom:45px;
+}
+
+.cancion-mensaje{
+    max-width:580px;
+    margin:0 auto 40px;
+
+    font-size:21px;
+    line-height:1.9;
+}
+
+.spotify{
+    width:100%;
+    max-width:500px;
+    height:152px;
+
+    border:0;
+    border-radius:12px;
+
+    margin:20px auto 35px;
+    display:block;
+}
+
+.cancion-nota{
+    font-size:16px;
+    line-height:1.7;
+    color:#756565;
+    max-width:500px;
+    margin:20px auto;
+}
+
+.boton-cancion{
+    margin-top:35px;
+}
 
-    /* =========================
-       BOTONES
-    ========================= */
 
-    .button-wrap {
-      text-align: center;
-      margin-top: 35px;
+/* =====================================================
+   CARTA
+===================================================== */
+
+#carta{
+    display:none;
+}
+
+.carta{
+    max-width:620px;
+    margin:auto;
+    text-align:left;
+
+    font-size:20px;
+    line-height:2;
+}
+
+.carta-saludo{
+    text-align:center;
+
+    font-size:28px;
+    color:#8b4a5a;
+
+    margin-bottom:35px;
+}
+
+
+/* NUEVA CANCIÓN */
+
+.carta-cancion{
+    text-align:center;
+
+    padding:30px 15px 35px;
+    margin:0 auto 45px;
+
+    border-top:1px solid rgba(139,74,90,.18);
+    border-bottom:1px solid rgba(139,74,90,.18);
+}
+
+.carta-cancion-titulo{
+    font-size:14px;
+    letter-spacing:4px;
+
+    color:#8b4a5a;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.carta-cancion-nombre{
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.carta-cancion-artista{
+    font-size:17px;
+    color:#756565;
+
+    margin-bottom:25px;
+}
+
+.spotify-carta{
+    width:100%;
+    max-width:500px;
+
+    height:152px;
+
+    border:0;
+    border-radius:12px;
+
+    display:block;
+    margin:0 auto 20px;
+}
+
+.carta-cancion-frase{
+    font-size:16px;
+    line-height:1.7;
+
+    color:#756565;
+
+    max-width:500px;
+    margin:auto;
+}
+
+
+.carta p{
+    margin-bottom:28px;
+}
+
+.carta-firma{
+    text-align:right;
+    margin-top:45px;
+
+    font-size:23px;
+    color:#8b4a5a;
+}
+
+.boton-carta{
+    margin-top:60px;
+}
+
+
+/* =====================================================
+   FUTURO
+===================================================== */
+
+#futuro{
+    display:none;
+}
+
+.futuro-intro{
+    max-width:620px;
+    font-size:28px;
+    line-height:1.8;
+    margin-bottom:55px;
+}
+
+.futuro-texto{
+    max-width:600px;
+    font-size:21px;
+    line-height:2;
+    margin:auto;
+}
+
+.futuro-lista{
+    margin:45px 0;
+
+    font-size:22px;
+    line-height:2.3;
+}
+
+.futuro-final{
+    margin-top:55px;
+
+    font-size:25px;
+    color:#8b4a5a;
+}
+
+.boton-futuro{
+    margin-top:65px;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+#final{
+    display:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8eef0,
+            #f3dfe4
+        );
+}
+
+.final-corazon{
+    font-size:58px;
+    margin-bottom:25px;
+
+    animation:latido 1.8s infinite;
+}
+
+.final-titulo{
+    font-size:34px;
+    font-weight:normal;
+
+    margin-bottom:40px;
+}
+
+.final-texto{
+    max-width:600px;
+    margin:auto;
+
+    font-size:22px;
+    line-height:2;
+}
+
+.final-desayuno{
+    font-size:27px;
+    color:#8b4a5a;
+
+    margin:45px 0;
+}
+
+.final-broma{
+    font-size:19px;
+    margin-top:35px;
+}
+
+.final-fecha{
+    margin-top:60px;
+
+    font-size:15px;
+    letter-spacing:4px;
+
+    color:#756565;
+}
+
+.final-meses{
+    font-size:22px;
+    margin-top:15px;
+}
+
+.final-amor{
+    font-size:32px;
+    color:#8b4a5a;
+
+    margin-top:30px;
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
     }
 
-    .next-btn {
-      border: none;
-      background: #8b4a5a;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 15px;
-      cursor: pointer;
-      box-shadow: 0 8px 22px rgba(139, 74, 90, .22);
-      transition: all .3s ease;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
+
+}
 
-    .next-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(139, 74, 90, .28);
+@keyframes fotoEntrada{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
     }
 
-    .next-btn:active {
-      transform: scale(.98);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
+
+}
 
-    /* =========================
-       CANCIONES
-    ========================= */
+@keyframes fotoGrande{
 
-    .song-card {
-      max-width: 620px;
-      margin: 30px auto;
-      text-align: center;
+    from{
+        opacity:0;
+        transform:scale(.97);
     }
 
-    .song-title {
-      font-size: 29px;
-      color: #8b4a5a;
-      margin-bottom: 4px;
+    to{
+        opacity:1;
+        transform:scale(1);
     }
 
-    .song-artist {
-      color: #8c7979;
-      font-size: 15px;
-      margin-bottom: 25px;
+}
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
     }
 
-    .spotify-wrapper {
-      width: 100%;
-      max-width: 620px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(61, 48, 48, .14);
+    50%{
+        transform:scale(1.12);
     }
+
+}
 
-    .spotify-wrapper iframe {
-      display: block;
-      width: 100%;
-      height: 352px;
-      border: none;
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media(max-width:600px){
+
+    .escena{
+        padding:35px 18px;
     }
 
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 620px;
-      margin: 0 auto;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(61, 48, 48, .14);
-      background: #eadfe0;
+    h1{
+        font-size:29px;
     }
 
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .mensaje{
+        font-size:17px;
     }
 
-    .song-intro {
-      max-width: 580px;
-      margin: 0 auto 25px;
-      font-size: 17px;
-      color: #665858;
-      text-align: center;
+    .intro,
+    .carro-intro{
+        font-size:21px;
     }
 
-    /* =========================
-       CARTA
-    ========================= */
+    .lugar{
+        font-size:35px;
+        letter-spacing:6px;
+    }
 
-    .letter {
-      max-width: 680px;
-      margin: 0 auto;
-      background: rgba(255,255,255,.48);
-      padding: 35px 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(61, 48, 48, .08);
+    .texto-final{
+        font-size:18px;
     }
 
-    .letter p {
-      margin-bottom: 23px;
-      font-size: 17px;
+    .conexion{
+        font-size:25px;
     }
 
-    .letter-opening {
-      font-size: 25px !important;
-      color: #8b4a5a;
-      margin-bottom: 30px !important;
+    .frase-lima{
+        font-size:21px;
     }
 
-    .letter-signature {
-      text-align: right;
-      font-size: 22px !important;
-      color: #8b4a5a;
-      margin-top: 35px;
+    .frase-lima-2{
+        font-size:35px;
     }
 
-    .letter-song {
-      margin-bottom: 40px;
+    .frase-lima-3{
+        font-size:19px;
     }
 
-    .letter-song-label {
-      text-align: center;
-      color: #8b4a5a;
-      font-size: 15px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+    .momentos-intro{
+        font-size:21px;
     }
 
-    .letter-song-title {
-      text-align: center;
-      color: #3d3030;
-      font-size: 27px;
-      margin-bottom: 3px;
+    .momento-texto{
+        font-size:18px;
     }
 
-    .letter-song-artist {
-      text-align: center;
-      color: #8c7979;
-      font-size: 14px;
-      margin-bottom: 22px;
+    .frase-momentos{
+        font-size:21px;
     }
 
-    /* =========================
-       FUTURO
-    ========================= */
+    .frase-carro{
+        font-size:21px;
+    }
 
-    .future-list {
-      max-width: 560px;
-      margin: 35px auto;
-      list-style: none;
+    .frase-mano{
+        font-size:19px;
     }
 
-    .future-list li {
-      font-size: 19px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(139, 74, 90, .13);
-      text-align: center;
+    .fotos-secundarias{
+        gap:12px;
     }
 
-    .future-list li:last-child {
-      border-bottom: none;
+    .mirada-intro{
+        font-size:23px;
     }
 
-    /* =========================
-       FINAL
-    ========================= */
+    .mirada-texto{
+        font-size:19px;
+    }
 
-    .final-section {
-      justify-content: center;
-      text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,.72), transparent 55%),
-        linear-gradient(145deg, #f8eef0, #f3dfe4);
+    .mirada-especial{
+        font-size:24px;
     }
 
-    .final-heart {
-      font-size: 65px;
-      color: #8b4a5a;
-      margin-bottom: 15px;
-      animation: heartbeat 2s ease-in-out infinite;
+    .mirada-final{
+        font-size:22px;
     }
 
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
+    .provocaste-intro{
+        font-size:23px;
+    }
 
-      50% {
-        transform: scale(1.08);
-      }
+    .provocaste-texto{
+        font-size:19px;
     }
 
-    .final-title {
-      font-size: clamp(34px, 9vw, 58px);
-      font-weight: normal;
-      line-height: 1.15;
-      color: #8b4a5a;
-      margin-bottom: 25px;
+    .provocaste-destacado{
+        font-size:24px;
     }
 
-    .final-text {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 19px;
+    .provocaste-final{
+        font-size:22px;
     }
 
-    .final-joke {
-      margin: 32px auto;
-      max-width: 520px;
-      font-size: 21px;
-      line-height: 1.65;
+    .cancion-nombre{
+        font-size:29px;
     }
 
-    .final-date {
-      margin-top: 35px;
-      font-size: 14px;
-      letter-spacing: 4px;
-      color: #8b4a5a;
+    .cancion-mensaje{
+        font-size:19px;
     }
 
-    .final-small {
-      margin-top: 18px;
-      color: #756565;
-      font-size: 15px;
+    .carta{
+        font-size:18px;
+        line-height:1.9;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    .carta-saludo{
+        font-size:25px;
+    }
 
-    @media (max-width: 600px) {
+    .carta-cancion-nombre{
+        font-size:24px;
+    }
 
-      .section {
-        padding: 42px 18px 60px;
-      }
+    .futuro-intro{
+        font-size:24px;
+    }
 
-      .story-text {
-        font-size: 17px;
-      }
+    .futuro-texto{
+        font-size:19px;
+    }
 
-      .story-text p {
-        margin-bottom: 21px;
-      }
+    .futuro-lista{
+        font-size:20px;
+    }
 
-      .quote {
-        font-size: 23px;
-      }
+    .final-titulo{
+        font-size:29px;
+    }
 
-      .photo-grid {
-        gap: 9px;
-      }
+    .final-texto{
+        font-size:19px;
+    }
 
-      .spotify-wrapper iframe {
-        height: 300px;
-      }
+    .final-desayuno{
+        font-size:24px;
+    }
 
-      .letter {
-        padding: 28px 20px;
-      }
+    .final-amor{
+        font-size:28px;
+    }
 
-      .letter p {
-        font-size: 16.5px;
-      }
+}
 
-      .future-list li {
-        font-size: 18px;
-      }
-    }
+</style>
 
-  </style>
 </head>
+
 
 <body>
 
-<div class="page">
 
-  <!-- =====================================================
-       1. PORTADA
-  ====================================================== -->
+<!-- =====================================================
+     1. PORTADA
+===================================================== -->
 
-  <section id="cover" class="section cover active">
+<section id="portada" class="escena">
 
-    <div class="content">
+<div class="contenedor">
 
-      <div class="cover-small">
-        Para ti ❤️
-      </div>
+<div class="corazon">
+❤️
+</div>
 
-      <h1>
-        Hola, mi amor<br>
-        <span>Melissa</span> ❤️
-      </h1>
+<h1>
+Hola, mi amor Melissa
+</h1>
 
-      <p class="cover-subtitle">
-        Hice esto pensando en ti.<br>
-        Hay una pequeña historia que quiero recordarte...
-      </p>
+<div class="mensaje">
 
-      <div class="button-wrap">
-        <button class="next-btn" onclick="showSection('iquitos')">
-          Abrir nuestra historia ❤️
-        </button>
-      </div>
+Hice esto pensando en ti.
 
-    </div>
+<br><br>
 
-  </section>
+Hay una pequeña historia
+que quiero recordarte...
 
+</div>
 
-  <!-- =====================================================
-       2. IQUITOS
-  ====================================================== -->
+<button onclick="abrirHistoria()">
+Abrir nuestra historia ❤️
+</button>
 
-  <section id="iquitos" class="section">
+</div>
 
-    <div class="content">
+</section>
 
-      <h2 class="section-title">
-        Quién iba a pensar que un viaje...
-      </h2>
 
-      <p class="section-subtitle">
-        Iquitos
-      </p>
 
-      <div class="story-text text-center">
+<!-- =====================================================
+     2. IQUITOS
+===================================================== -->
 
-        <p>
-          nos llevaría a descubrir una bonita conexión.
-        </p>
+<section id="iquitos" class="escena">
 
-      </div>
+<div class="contenedor">
 
-      <div class="date">
-        12 · 07 · 2026
-      </div>
+<div class="intro">
 
-      <div class="photo-grid">
+Quién iba a pensar que un viaje...
 
-        <img src="iquitos-01.jpg" alt="Iquitos">
+<br><br>
 
-        <img src="iquitos-02.jpg" alt="Iquitos">
+<strong>
+nos llevaría a descubrir
+una bonita conexión.
+</strong>
 
-      </div>
+</div>
 
-      <div class="story-text">
+<div class="fecha">
+12 · 07 · 2026
+</div>
 
-        <p>
-          Unos días para conocernos. Unos días para compartir.
-          Unos días para descubrir algo que ninguno de los dos esperaba.
-        </p>
+<div class="lugar">
+IQUITOS
+</div>
 
-        <p class="quote">
-          Una bonita conexión. ❤️
-        </p>
+<div class="foto foto-1">
 
-        <p class="text-center">
-          Y un beso antes de volver a Lima.
-        </p>
+<img
+src="iquitos-01.jpg"
+alt="Nuestro primer día en Iquitos">
 
-      </div>
+</div>
 
-      <div class="button-wrap">
+<div class="foto foto-2">
 
-        <button class="next-btn" onclick="showSection('regreso')">
-          Seguir nuestra historia ❤️
-        </button>
+<img
+src="iquitos-02.jpg"
+alt="Nuestro primer día en Iquitos">
 
-      </div>
+</div>
 
-    </div>
+<div class="texto-final">
 
-  </section>
+Unos días para conocernos.
 
+<br>
 
-  <!-- =====================================================
-       3. REGRESO A LIMA
-  ====================================================== -->
+Unos días para compartir.
 
-  <section id="regreso" class="section">
+<br>
 
-    <div class="content">
+Unos días para descubrir
+algo que ninguno de los dos esperaba.
 
-      <div class="story-text text-center">
+<div class="conexion">
+Una bonita conexión. ❤️
+</div>
 
-        <p class="quote">
-          Pensamos que lo que pasó en Iquitos se quedaba en Iquitos.
-        </p>
+Y un beso antes de volver a Lima.
 
-        <p>
-          Pero no.
-        </p>
+</div>
 
-        <p>
-          Volvimos a buscarnos.
-        </p>
+<button
+class="continuar"
+onclick="irALima()">
 
-        <p>
-          Y aquella bonita conexión comenzó a convertirse en algo más.
-        </p>
+Continuar
 
-      </div>
+</button>
 
-      <div class="divider"></div>
+</div>
 
-      <div class="button-wrap">
+</section>
 
-        <button class="next-btn" onclick="showSection('lima')">
-          Y entonces... ❤️
-        </button>
 
-      </div>
 
-    </div>
+<!-- =====================================================
+     3. PERO NO
+===================================================== -->
 
-  </section>
+<section id="lima" class="escena">
 
+<div class="contenedor">
 
-  <!-- =====================================================
-       4. LIMA
-  ====================================================== -->
+<div class="lima-texto">
 
-  <section id="lima" class="section">
+<div class="frase-lima">
 
-    <div class="content">
+Pensamos que lo que pasó
+en Iquitos se quedaba en Iquitos.
 
-      <h2 class="section-title">
-        Y poco a poco...
-      </h2>
+</div>
 
-      <p class="section-subtitle">
-        Lima
-      </p>
+<div class="frase-lima-2">
+Pero no.
+</div>
 
-      <div class="story-text text-center">
+<div class="frase-lima-3">
 
-        <p>
-          empezamos a encontrar cualquier excusa para vernos.
-        </p>
+Volvimos a buscarnos.
 
-      </div>
+<br><br>
 
-      <div class="single-photo">
+Y aquella bonita conexión
+comenzó a convertirse en algo más.
 
-        <img src="7tapas.jpg" alt="Nuestro momento en 7 Tapas">
+</div>
 
-        <div class="photo-caption">
-          Una salida.
-        </div>
+<button
+class="boton-lima"
+onclick="irAMomentos()">
 
-      </div>
+Continuar →
 
-      <div class="single-photo">
+</button>
 
-        <img src="celeste-01.jpg" alt="Momento juntos">
+</div>
 
-      </div>
+</div>
 
-      <div class="single-photo">
+</section>
 
-        <img src="celeste-02.jpg" alt="Momento juntos">
 
-        <div class="photo-caption">
-          Otra conversación. Otro momento juntos.
-        </div>
 
-      </div>
+<!-- =====================================================
+     4. MOMENTOS
+===================================================== -->
 
-      <div class="single-photo">
+<section id="momentos" class="escena">
 
-        <img src="desayuno.jpg" alt="Desayuno juntos">
+<div class="contenedor">
 
-        <div class="photo-caption">
-          Un desayuno juntos antes de empezar el día. ☕❤️
-        </div>
+<div class="momentos-intro">
 
-      </div>
+Y poco a poco...
 
-      <div class="story-text">
+<br>
 
-        <p>
-          Y poco a poco entendí...
-          que no necesitaba hacer algo extraordinario contigo.
-          Me bastaba con tenerte cerca.
-        </p>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('carro')">
-          Hay algo más que me encanta de nosotros ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       5. EL AUTO
-  ====================================================== -->
-
-  <section id="carro" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Contigo hasta lo más simple...
-      </h2>
-
-      <p class="section-subtitle">
-        se siente diferente
-      </p>
-
-      <div class="story-text text-center">
-
-        <p>
-          Y es que contigo hasta los momentos más simples se sienten diferentes.
-        </p>
-
-      </div>
-
-      <div class="single-photo">
-
-        <img src="carro-01.jpg" alt="Nosotros en el auto">
-
-      </div>
-
-      <div class="story-text">
-
-        <p>
-          Hablar. Reírnos. Mirarnos. Buscar tu mano.
-        </p>
-
-        <p>
-          Cuando manejo, siempre termino buscando tu mano.
-        </p>
-
-        <p class="text-center">
-          Incluso aprendí a manejar con una sola mano por ti. 😂❤️
-        </p>
-
-      </div>
-
-      <div class="photo-grid">
-
-        <img src="carro-02.jpg" alt="Nosotros">
-
-        <img src="carro-03.jpg" alt="Nosotros">
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('mirada')">
-          Pero hay algo de ti que nunca voy a olvidar ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       6. TU MIRADA
-  ====================================================== -->
-
-  <section id="mirada" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Tu mirada
-      </h2>
-
-      <p class="section-subtitle">
-        Hay algo de ti...
-      </p>
-
-      <div class="single-photo">
-
-        <img src="mirada.jpg" alt="Un momento especial">
-
-      </div>
-
-      <div class="story-text">
-
-        <p>
-          Hay algo de ti que nunca voy a olvidar.
-        </p>
-
-        <p>
-          La forma en que me miras.
-        </p>
-
-        <p>
-          Siento que cuando me miras, no ves solamente al Luis Díaz
-          que todos conocen.
-        </p>
-
-        <p>
-          Tú siempre dices que conociste a otro Luis Díaz.
-        </p>
-
-        <p>
-          Y creo que tienes razón.
-        </p>
-
-        <p>
-          Porque contigo también conocí mi mejor versión.
-        </p>
-
-        <p>
-          Gracias por mirarme así.
-        </p>
-
-        <p>
-          Gracias por hacerme sentir tan querido,
-          tan especial y tan yo.
-        </p>
-
-        <p class="text-center">
-          Siento que nadie me miró como lo haces tú. ❤️
-        </p>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('cambio')">
-          Hay algo que quiero agradecerte ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       7. LO QUE PROVOCASTE EN MÍ
-  ====================================================== -->
-
-  <section id="cambio" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Lo que provocaste en mí
-      </h2>
-
-      <p class="section-subtitle">
-        Gracias por llegar
-      </p>
-
-      <div class="story-text">
-
-        <p>
-          Cuando te conocí, algo cambió en mí.
-        </p>
-
-        <p>
-          Antes de ti, sentía que estaba un poco apagado.
-        </p>
-
-        <p>
-          No tenía mucha energía. Me sentía cansado,
-          sin muchas ganas de hacer cosas.
-        </p>
-
-        <p>
-          Hasta llegué a pensar que quizá algo me estaba pasando.
-        </p>
-
-        <p>
-          Y entonces apareciste tú.
-        </p>
-
-        <p>
-          Y poco a poco volvieron cosas que tenía un tiempo sin sentir.
-        </p>
-
-        <p>
-          Ilusión. Motivación. Alegría. Tranquilidad.
-        </p>
-
-        <p>
-          También descubrí que contigo podía verme de otra manera.
-        </p>
-
-        <p>
-          Me acompañaste a comprar ropa, me ayudaste a encontrar
-          un estilo que hoy siento mucho más mío y, sin darme cuenta,
-          empezaste a sacar una versión de mí que no conocía.
-        </p>
-
-        <p>
-          Hoy me siento más elegante, más seguro y más yo.
-        </p>
-
-        <p>
-          Y aunque pueda parecer un detalle pequeño, para mí significa mucho…
-          porque detrás de ese cambio también está tu cariño,
-          tu paciencia y esas ganas que tienes de verme bien.
-        </p>
-
-        <p class="text-center">
-          <strong>
-            Gracias por ayudarme a descubrirme un poquito más. ❤️
-          </strong>
-        </p>
-
-        <p>
-          Volví a tener ganas de salir temprano del trabajo para verte.
-        </p>
-
-        <p>
-          Ganas de compartir.
-        </p>
-
-        <p>
-          Ganas de sonreír.
-        </p>
-
-        <p>
-          Y, sobre todo, volví a sentir que alguien me quiere. ❤️
-        </p>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('cancion')">
-          Hay una canción que me recuerda a nosotros ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       8. NUESTRA CANCIÓN
-  ====================================================== -->
-
-  <section id="cancion" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Nuestra canción
-      </h2>
-
-      <p class="section-subtitle">
-        Esta es para nosotros
-      </p>
-
-      <div class="song-card">
-
-        <div class="song-title">
-          Antes que el tiempo se vaya
-        </div>
-
-        <div class="song-artist">
-          Fonseca &amp; Juanes
-        </div>
-
-        <p class="song-intro">
-          Hay canciones que simplemente se convierten en parte de una historia.
-          Y esta quiero que sea una de las que siempre nos recuerde a nosotros.
-        </p>
-
-        <div class="spotify-wrapper">
-
-          <iframe
-            src="https://open.spotify.com/embed/track/4lz3N9CKsrJEvNHA5irhEJ?utm_source=generator"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-
-        </div>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('carta')">
-          Continuar ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       9. CARTA
-  ====================================================== -->
-
-  <section id="carta" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Para ti, Melissa ❤️
-      </h2>
-
-      <div class="letter">
-
-        <!-- SEGUNDA CANCIÓN -->
-
-        <div class="letter-song">
-
-          <div class="letter-song-label">
-            Antes de seguir leyendo...
-          </div>
-
-          <div class="letter-song-title">
-            Te conocí
-          </div>
-
-          <div class="letter-song-artist">
-            Zenar &amp; Dario Coiro
-          </div>
-
-          <div class="video-wrapper">
-
-            <iframe
-              src="https://www.youtube.com/embed/VHO-R_ait_s"
-              title="Te conocí - Zenar & Dario Coiro"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-
-          </div>
-
-          <p class="text-center" style="margin-top:22px;">
-            Esta canción me hizo pensar en nosotros desde que la escuché.
-          </p>
-
-          <p class="text-center">
-            Porque hay personas que llegan y cambian el aire.
-          </p>
-
-        </div>
-
-
-        <!-- CARTA -->
-
-        <p class="letter-opening">
-          Amore,
-        </p>
-
-        <p>
-          Si tuviera que explicar todo lo que ha pasado estos meses,
-          creo que empezaría por decirte que no me esperaba esto.
-        </p>
-
-        <p>
-          No me esperaba encontrarte, conocerte de esta manera
-          y terminar sintiendo todo esto por ti.
-        </p>
-
-        <p>
-          Me gusta nuestra forma de estar juntos.
-          Me gusta que podamos hablar durante horas,
-          reírnos por cualquier cosa, buscar cualquier momento
-          para vernos y simplemente disfrutar de estar juntos.
-        </p>
-
-        <p>
-          Me gusta cómo me haces sentir.
-          Me gusta saber que estás pendiente de mí,
-          que preguntas si llegué bien, cómo me fue en el trabajo
-          y que quieres verme bien.
-        </p>
-
-        <p>
-          También me gusta sentir que tú haces un esfuerzo
-          por compartir conmigo todo el tiempo que podamos.
-        </p>
-
-        <p>
-          Y quizá una de las cosas que más valoro de nosotros
-          es que contigo puedo ser yo.
-        </p>
-
-        <p>
-          Tú conociste a otro Luis Díaz.
-          Y yo conocí una versión de mí que tenía muchas ganas
-          de volver a aparecer.
-        </p>
-
-        <p>
-          No sé exactamente qué nos espera,
-          pero sí sé algo: quiero seguir descubriéndolo contigo.
-        </p>
-
-        <p>
-          Quiero seguir teniendo mañanas contigo,
-          seguir buscándote después del trabajo,
-          seguir compartiendo viajes, conversaciones,
-          risas, abrazos y todos esos momentos
-          que terminan convirtiéndose en nuestros recuerdos.
-        </p>
-
-        <p>
-          Gracias por estos dos meses.
-          Gracias por llegar.
-          Gracias por quedarte.
-        </p>
-
-        <p class="letter-signature">
-          Te amo.<br>
-          Luis ❤️
-        </p>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('futuro')">
-          Y todavía nos falta mucho por vivir... ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       10. FUTURO
-  ====================================================== -->
-
-  <section id="futuro" class="section">
-
-    <div class="content">
-
-      <h2 class="section-title">
-        Y cuando pienso en nosotros...
-      </h2>
-
-      <p class="section-subtitle">
-        Lo que todavía nos falta vivir
-      </p>
-
-      <div class="story-text text-center">
-
-        <p>
-          me ilusiona pensar en todo lo que todavía nos falta vivir.
-        </p>
-
-      </div>
-
-      <ul class="future-list">
-
-        <li>
-          Despertar juntos. ❤️
-        </li>
-
-        <li>
-          Viajar juntos.
-        </li>
-
-        <li>
-          Compartir nuestros días.
-        </li>
-
-        <li>
-          Hacer planes.
-        </li>
-
-        <li>
-          Reírnos de nuestras cosas.
-        </li>
-
-        <li>
-          Construir nuestra vida.
-        </li>
-
-      </ul>
-
-      <div class="story-text text-center">
-
-        <p>
-          Quiero que algún día todo eso que hoy imaginamos
-          sea simplemente nuestra vida.
-        </p>
-
-        <p class="quote">
-          Y quiero vivirla contigo. ❤️
-        </p>
-
-      </div>
-
-      <div class="button-wrap">
-
-        <button class="next-btn" onclick="showSection('final')">
-          Una última cosa... ❤️
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================================================
-       11. FINAL
-  ====================================================== -->
-
-  <section id="final" class="section final-section">
-
-    <div class="content">
-
-      <div class="final-heart">
-        ❤️
-      </div>
-
-      <h2 class="final-title">
-        Feliz 2 meses,<br>
-        mi amor
-      </h2>
-
-      <div class="final-text">
-
-        <p>
-          Aunque hay algo que ya tengo bastante claro...
-        </p>
-
-        <div class="final-joke">
-
-          Cuando vivamos juntos...<br>
-          el desayuno corre por mi cuenta. ☕❤️
-
-          <br><br>
-
-          Mientras tú estás tomando una de tus largas duchas...
-
-          <br><br>
-
-          yo me encargo del desayuno.
-
-          <br><br>
-
-          <strong>
-            Mucha confianzita, Luis Díaz. 😂
-          </strong>
-
-        </div>
-
-        <div class="final-date">
-          18 · 09 · 2026
-        </div>
-
-        <div class="final-small">
-          2 meses de nosotros.
-        </div>
-
-        <div style="margin-top:28px; font-size:24px; color:#8b4a5a;">
-          Te amo. ❤️
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+empezamos a encontrar
+cualquier excusa para vernos.
 
 </div>
 
 
+<div class="momento">
+
+<div class="momento-titulo">
+Un lugar
+</div>
+
+<img
+src="7tapas.jpg"
+alt="Una salida juntos">
+
+<div class="momento-texto">
+Una salida.
+</div>
+
+</div>
+
+
+<div class="momento">
+
+<div class="momento-titulo">
+Otra salida
+</div>
+
+<img
+src="celeste-01.jpg"
+alt="Una salida juntos">
+
+<div class="momento-texto">
+
+Otra conversación.
+
+<br>
+
+Otro momento juntos.
+
+</div>
+
+</div>
+
+
+<div class="momento">
+
+<img
+src="celeste-02.jpg"
+alt="Un momento juntos">
+
+</div>
+
+
+<div class="momento">
+
+<div class="momento-titulo">
+Antes del trabajo
+</div>
+
+<img
+src="desayuno.jpg"
+alt="Desayuno juntos">
+
+<div class="momento-texto">
+
+Un desayuno juntos
+antes de empezar el día.
+
+</div>
+
+</div>
+
+
+<div class="frase-momentos">
+
+Y poco a poco entendí...
+
+<br><br>
+
+que no necesitaba
+hacer algo extraordinario contigo.
+
+<br><br>
+
+Me bastaba con tenerte cerca.
+
+</div>
+
+
+<button
+class="boton-momentos"
+onclick="irACarro()">
+
+Continuar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     5. CARRO
+===================================================== -->
+
+<section id="carro" class="escena">
+
+<div class="contenedor">
+
+<div class="carro-intro">
+
+Y es que contigo
+hasta los momentos más simples
+se sienten diferentes.
+
+</div>
+
+
+<div class="foto-principal">
+
+<img
+src="carro-01.jpg"
+alt="Un momento juntos en el carro">
+
+</div>
+
+
+<div class="frase-carro">
+
+Hablar.
+
+<br>
+
+Reírnos.
+
+<br>
+
+Mirarnos.
+
+<br>
+
+Buscar tu mano.
+
+</div>
+
+
+<div class="frase-mano">
+
+Cuando manejo,
+siempre termino buscando tu mano.
+
+<div class="broma-mano">
+
+Incluso aprendí a manejar
+con una sola mano por ti. 😂❤️
+
+</div>
+
+</div>
+
+
+<div class="fotos-secundarias">
+
+<div class="foto-secundaria">
+
+<img
+src="carro-02.jpg"
+alt="Otro momento juntos">
+
+</div>
+
+<div class="foto-secundaria">
+
+<img
+src="carro-03.jpg"
+alt="Otro momento juntos">
+
+</div>
+
+</div>
+
+
+<button
+class="boton-carro"
+onclick="irAMirada()">
+
+Continuar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     6. TU MIRADA
+===================================================== -->
+
+<section id="mirada" class="escena">
+
+<div class="contenedor">
+
+<div class="mirada-intro">
+
+Hay algo de ti
+que nunca voy a olvidar.
+
+<br><br>
+
+La forma en que me miras.
+
+</div>
+
+
+<div class="mirada-foto">
+
+<img
+src="mirada.jpg"
+alt="Un momento juntos">
+
+</div>
+
+
+<div class="mirada-texto">
+
+
+<div class="mirada-bloque">
+
+Siento que cuando me miras,
+
+<br>
+
+no ves solamente
+al Luis Díaz que todos conocen.
+
+</div>
+
+
+<div class="mirada-bloque">
+
+Tú siempre dices que conociste
+
+<div class="mirada-especial">
+
+a otro Luis Díaz.
+
+</div>
+
+Y creo que tienes razón.
+
+</div>
+
+
+<div class="mirada-bloque">
+
+Porque contigo también conocí
+
+<div class="mirada-especial">
+
+mi mejor versión.
+
+</div>
+
+</div>
+
+
+<div class="mirada-gracias">
+
+Gracias por mirarme así.
+
+<br><br>
+
+Gracias por hacerme sentir
+tan querido, tan especial
+y tan yo.
+
+</div>
+
+
+<div class="mirada-final">
+
+Siento que nadie me miró
+como lo haces tú. ❤️
+
+</div>
+
+
+</div>
+
+
+<button
+class="boton-mirada"
+onclick="irAProvocaste()">
+
+Continuar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     7. LO QUE PROVOCASTE EN MÍ
+===================================================== -->
+
+<section id="provocaste" class="escena">
+
+<div class="contenedor">
+
+
+<div class="provocaste-intro">
+
+Cuando te conocí,
+algo cambió en mí.
+
+</div>
+
+
+<div class="provocaste-texto">
+
+
+<div class="provocaste-bloque">
+
+Antes de ti,
+sentía que estaba un poco apagado.
+
+<br><br>
+
+No tenía mucha energía.
+Me sentía cansado,
+sin muchas ganas de hacer cosas.
+
+<br><br>
+
+Hasta llegué a pensar
+que quizá algo me estaba pasando.
+
+</div>
+
+
+<div class="provocaste-bloque">
+
+Y entonces apareciste tú.
+
+</div>
+
+
+<div class="provocaste-bloque">
+
+Y poco a poco volvieron cosas
+que tenía un tiempo sin sentir.
+
+<div class="provocaste-destacado">
+
+Ilusión.<br>
+Motivación.<br>
+Alegría.<br>
+Tranquilidad.
+
+</div>
+
+</div>
+
+
+<div class="provocaste-bloque">
+
+Volví a tener ganas.
+
+<br><br>
+
+Ganas de salir temprano del trabajo
+para verte.
+
+<br>
+
+Ganas de compartir.
+
+<br>
+
+Ganas de sonreír.
+
+</div>
+
+  <p>También descubrí que contigo podía verme de otra manera.</p>
+
+<p>Me acompañaste a comprar ropa, me ayudaste a encontrar un estilo que hoy siento mucho más mío y, sin darme cuenta, empezaste a sacar una versión de mí que no conocía.</p>
+
+<p>Hoy me siento más elegante, más seguro y más yo.</p>
+
+<p>Y aunque pueda parecer un detalle pequeño, para mí significa mucho… porque detrás de ese cambio también está tu cariño, tu paciencia y esas ganas que tienes de verme bien.</p>
+
+<p>Gracias por ayudarme a descubrirme un poquito más. ❤️</p>
+  
+
+<div class="provocaste-final">
+
+Y, sobre todo,
+
+<br><br>
+
+volví a sentir
+que alguien me quiere.
+
+<br>
+
+❤️
+
+</div>
+
+
+</div>
+
+
+<button
+class="boton-provocaste"
+onclick="irACancion()">
+
+Hay una canción que me recuerda a nosotros ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     8. NUESTRA CANCIÓN
+===================================================== -->
+
+<section id="cancion" class="escena">
+
+<div class="contenedor">
+
+
+<div class="cancion-titulo">
+Nuestra canción
+</div>
+
+
+<div class="cancion-nombre">
+Antes que el tiempo se vaya
+</div>
+
+
+<div class="cancion-artistas">
+Fonseca & Juanes
+</div>
+
+
+<div class="cancion-mensaje">
+
+Hay canciones que simplemente
+se convierten en parte de una historia.
+
+<br><br>
+
+Y esta quiero que sea una de las
+que siempre nos recuerde a nosotros.
+
+</div>
+
+
+<iframe
+class="spotify"
+src="https://open.spotify.com/embed/track/4lz3N9CKsrJEvNHA5irhEJ?utm_source=generator"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
+
+
+<div class="cancion-nota">
+
+Ponla, escúchala un momento
+y piensa en nosotros. ❤️
+
+</div>
+
+
+<button
+class="boton-cancion"
+onclick="irACarta()">
+
+Continuar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     9. CARTA
+===================================================== -->
+
+<section id="carta" class="escena">
+
+<div class="contenedor">
+
+
+<div class="carta">
+
+
+<div class="carta-saludo">
+
+Para ti, Melissa ❤️
+
+</div>
+
+
+<!-- ==========================================
+     SEGUNDA CANCIÓN
+========================================== -->
+
+<div class="carta-cancion">
+
+<div class="carta-cancion-titulo">
+
+Antes de seguir leyendo...
+
+</div>
+
+<div class="carta-cancion-nombre">
+
+Te conocí
+
+</div>
+
+<div class="carta-cancion-artista">
+
+Zenar & Dario Coiro
+
+</div>
+
+
+<iframe
+class="spotify-carta"
+src="https://www.youtube.com/embed/VHO-R_ait_s"
+title="Te conocí - Zenar & Dario Coiro"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+
+<div class="carta-cancion-frase">
+
+Esta canción me hizo pensar
+en nosotros desde que la escuché.
+
+<br><br>
+
+Porque hay personas que llegan
+y cambian el aire.
+
+</div>
+
+</div>
+
+
+<p>
+
+Amore,
+
+</p>
+
+
+<p>
+
+Si tuviera que explicar
+todo lo que ha pasado estos meses,
+creo que empezaría por decirte
+que no me esperaba esto.
+
+</p>
+
+
+<p>
+
+No me esperaba encontrarte,
+conocerte de esta manera
+y terminar sintiendo todo esto por ti.
+
+</p>
+
+
+<p>
+
+Me gusta nuestra forma de estar juntos.
+Me gusta que podamos hablar durante horas,
+reírnos por cualquier cosa,
+buscar cualquier momento para vernos
+y simplemente disfrutar de estar juntos.
+
+</p>
+
+
+<p>
+
+Me gusta cómo me haces sentir.
+Me gusta saber que estás pendiente de mí,
+que preguntas si llegué bien,
+cómo me fue en el trabajo
+y que quieres verme bien.
+
+</p>
+
+
+<p>
+
+También me gusta sentir
+que tú haces un esfuerzo
+por compartir conmigo
+todo el tiempo que podamos.
+
+</p>
+
+
+<p>
+
+Y quizá una de las cosas
+que más valoro de nosotros
+es que contigo puedo ser yo.
+
+</p>
+
+
+<p>
+
+Tú conociste a otro Luis Díaz.
+
+<br>
+
+Y yo conocí una versión de mí
+que tenía muchas ganas de volver a aparecer.
+
+</p>
+
+
+<p>
+
+No sé exactamente qué nos espera,
+pero sí sé algo:
+
+<br><br>
+
+quiero seguir descubriéndolo contigo.
+
+</p>
+
+
+<p>
+
+Quiero seguir teniendo mañanas contigo,
+seguir buscándote después del trabajo,
+seguir compartiendo viajes,
+conversaciones, risas,
+abrazos y todos esos momentos
+que terminan convirtiéndose
+en nuestros recuerdos.
+
+</p>
+
+
+<p>
+
+Gracias por estos dos meses.
+
+<br>
+
+Gracias por llegar.
+
+<br>
+
+Gracias por quedarte.
+
+</p>
+
+
+<div class="carta-firma">
+
+Te amo.
+
+<br>
+
+Luis ❤️
+
+</div>
+
+
+</div>
+
+
+<button
+class="boton-carta"
+onclick="irAFuturo()">
+
+Y esto recién comienza...
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     10. FUTURO
+===================================================== -->
+
+<section id="futuro" class="escena">
+
+<div class="contenedor">
+
+
+<div class="futuro-intro">
+
+Y cuando pienso en nosotros...
+
+</div>
+
+
+<div class="futuro-texto">
+
+me ilusiona pensar
+en todo lo que todavía
+nos falta vivir.
+
+</div>
+
+
+<div class="futuro-lista">
+
+Despertar juntos. ❤️
+
+<br>
+
+Viajar juntos.
+
+<br>
+
+Compartir nuestros días.
+
+<br>
+
+Hacer planes.
+
+<br>
+
+Reírnos de nuestras cosas.
+
+<br>
+
+Construir nuestra vida.
+
+</div>
+
+
+<div class="futuro-texto">
+
+Quiero que algún día
+todo eso que hoy imaginamos
+
+<br><br>
+
+sea simplemente nuestra vida.
+
+</div>
+
+
+<div class="futuro-final">
+
+Y quiero vivirla contigo.
+
+<br>
+
+❤️
+
+</div>
+
+
+<button
+class="boton-futuro"
+onclick="irAFinal()">
+
+Una última cosa... ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     11. FINAL
+===================================================== -->
+
+<section id="final" class="escena">
+
+<div class="contenedor">
+
+
+<div class="final-corazon">
+❤️
+</div>
+
+
+<div class="final-titulo">
+
+Feliz 2 meses, mi amor
+
+</div>
+
+
+<div class="final-texto">
+
+Aunque hay algo
+que ya tengo bastante claro...
+
+<div class="final-desayuno">
+
+Cuando vivamos juntos...
+
+<br><br>
+
+el desayuno corre por mi cuenta. ☕❤️
+
+</div>
+
+
+Mientras tú estás tomando
+una de tus largas duchas...
+
+<br><br>
+
+yo me encargo del desayuno.
+
+
+<div class="final-broma">
+
+Mucha confianzita, Luis Díaz. 😂
+
+</div>
+
+
+<div class="final-fecha">
+
+18 · 09 · 2026
+
+</div>
+
+
+<div class="final-meses">
+
+2 meses de nosotros.
+
+</div>
+
+
+<div class="final-amor">
+
+Te amo. ❤️
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
 <script>
 
-  function showSection(id) {
 
-    const sections = document.querySelectorAll(".section");
+/* =====================================================
+   NAVEGACIÓN
+===================================================== */
 
-    sections.forEach(section => {
-      section.classList.remove("active");
+function mostrar(ocultar, mostrar){
+
+    document.getElementById(ocultar)
+        .style.display="none";
+
+    document.getElementById(mostrar)
+        .style.display="flex";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
     });
 
-    const target = document.getElementById(id);
+}
 
-    if (target) {
-      target.classList.add("active");
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
 
-  }
+/* =====================================================
+   PORTADA
+===================================================== */
+
+function abrirHistoria(){
+
+    const portada =
+        document.getElementById("portada");
+
+    const iquitos =
+        document.getElementById("iquitos");
+
+    portada.style.opacity="0";
+
+    setTimeout(function(){
+
+        portada.style.display="none";
+
+        iquitos.style.display="flex";
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    },1500);
+
+}
+
+
+/* =====================================================
+   SECUENCIA
+===================================================== */
+
+function irALima(){
+    mostrar("iquitos","lima");
+}
+
+function irAMomentos(){
+    mostrar("lima","momentos");
+}
+
+function irACarro(){
+    mostrar("momentos","carro");
+}
+
+function irAMirada(){
+    mostrar("carro","mirada");
+}
+
+function irAProvocaste(){
+    mostrar("mirada","provocaste");
+}
+
+function irACancion(){
+    mostrar("provocaste","cancion");
+}
+
+function irACarta(){
+    mostrar("cancion","carta");
+}
+
+function irAFuturo(){
+    mostrar("carta","futuro");
+}
+
+function irAFinal(){
+    mostrar("futuro","final");
+}
 
 </script>
 
 </body>
+
 </html>
